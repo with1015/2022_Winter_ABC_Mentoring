@@ -1,0 +1,12 @@
+#!/bin/bash
+
+ITER=$1
+TIME=5
+
+for i in $(seq $ITER)
+do
+	python3 python_work.py --time $TIME &
+done
+
+wait
+echo "All works done"
