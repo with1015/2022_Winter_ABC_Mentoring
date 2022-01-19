@@ -10,6 +10,10 @@ usage() {
   exit 1;
 }
 
+if [[ $# > 4 || $# < 1 ]]; then
+  usage
+  exit 1;
+fi
 
 # Get option arguments
 while getopts ":j:s:h" opt; do
@@ -20,7 +24,7 @@ while getopts ":j:s:h" opt; do
     j)
         num_job=${OPTARG}
         ;;
-    h|*)
+    h|?|*)
         usage
         ;;    
   esac
@@ -28,6 +32,9 @@ done
 
 shift $((OPTIND-1))
 
+if [ -z ${sleep_time} ] || [ -z ${num_job} ]; then
+  usage
+fi
 
 # Run python works via arguments
 for idx in `seq ${num_job}`
