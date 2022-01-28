@@ -1,0 +1,1820 @@
+Script started on Thu 21 Jan 2021 06:54:13 PM KST
+(base) ]0;plum@shark3: ~/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarksplum@shark3:~/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks$ source singlr[Ke_run_cifar.sh 
+[Log] model is resnet20
+[Log] # of GPUs is 2
+Thu Jan 21 18:54:24 KST 2021
+2021-01-21 18:54:26.822350: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-01-21 18:54:27.084860: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:02:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:54:27.228391: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:54:27.384072: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:82:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:54:27.553887: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 3 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:83:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:54:27.556740: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:54:27.564480: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:54:27.564508: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:54:27.564520: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:54:27.564529: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:54:27.564541: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:54:27.564551: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:54:27.568987: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:54:27.570249: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:54:27.570932: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:54:27.571614: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+TensorFlow:  1.12
+Model:       alexnet
+Dataset:     cifar10
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  16 global
+             16.0 per device
+Num batches: 100
+Num epochs:  0.03
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+W0121 18:54:27.586890 140033248978752 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W0121 18:54:31.287924 140033248978752 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:866: slice_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(tuple(tensor_list)).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:54:31.292649 140033248978752 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:374: range_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.range(limit).shuffle(limit).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:54:31.295251 140033248978752 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:320: input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(input_tensor).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:54:31.296241 140033248978752 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:190: limit_epochs (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensors(tensor).repeat(num_epochs)`.
+W0121 18:54:31.298229 140033248978752 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:54:31.299362 140033248978752 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:54:31.300025 140033248978752 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:202: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+W0121 18:54:31.307200 140033248978752 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:876: shuffle_batch (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.shuffle(min_after_dequeue).batch(batch_size)`.
+W0121 18:54:31.973894 140033248978752 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:126: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+W0121 18:54:31.989164 140033248978752 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:250: max_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.max_pooling2d instead.
+Initializing graph
+W0121 18:54:32.173627 140033248978752 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2157: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2021-01-21 18:54:33.317291: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:54:33.317539: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:54:33.317551: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:54:33.317558: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:54:33.317564: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:54:33.317568: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:54:33.317575: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:54:33.319803: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:54:33.320911: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:54:33.321346: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:54:33.321899: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+2021-01-21 18:54:34.193942: I tensorflow/core/common_runtime/placer.cc:834] 190812-final[JH] Placer::Run
+2021-01-21 18:54:34.194024: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:CPU:0, 1/5
+2021-01-21 18:54:34.194042: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:0, 2/5
+2021-01-21 18:54:34.194054: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:1, 3/5
+2021-01-21 18:54:34.194065: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:2, 4/5
+2021-01-21 18:54:34.194077: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:3, 5/5
+global_step/Initializer/zeros: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/Assign: (Assign): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+AddRecv IsControlEdge
+I0121 18:54:35.752384 140033248978752 session_manager.py:491] Running local_init_op.
+!22 node_store: 
+I0121 18:54:36.545033 140033248978752 session_manager.py:493] Done running local_init_op.
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+I0121 18:54:37.333360 140033248978752 supervisor.py:733] Starting standard services.
+W0121 18:54:37.333659 140033248978752 supervisor.py:668] Standard services need a 'logdir' passed to the SessionManager
+I0121 18:54:37.333793 140033248978752 supervisor.py:740] Starting queue runners.
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_global_step_0_0: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+Running warm up
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/read: (Identity): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd/value: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd: (AssignAdd): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_inc_global_step/AssignAdd_0_1: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+AddRecv IsControlEdge
+2021-01-21 18:55:02.067293: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 4700.5 +/- 0.0 (jitter = 0.0)	2.364
+10	images/sec: 5771.4 +/- 172.6 (jitter = 350.9)	2.274
+20	images/sec: 5922.2 +/- 103.2 (jitter = 359.2)	2.493
+30	images/sec: 5952.7 +/- 73.5 (jitter = 354.6)	2.274
+40	images/sec: 5954.9 +/- 60.0 (jitter = 357.3)	2.216
+50	images/sec: 6101.0 +/- 68.1 (jitter = 438.7)	2.098
+60	images/sec: 6211.1 +/- 71.8 (jitter = 456.1)	2.138
+70	images/sec: 6291.8 +/- 66.2 (jitter = 474.6)	2.499
+80	images/sec: 6346.3 +/- 62.9 (jitter = 572.5)	1.985
+90	images/sec: 6304.9 +/- 59.8 (jitter = 627.3)	2.295
+100	images/sec: 6297.3 +/- 62.9 (jitter = 666.0)	2.036
+training_time:  0.2635676860809326
+----------------------------------------------------------------
+total images/sec: 6070.55
+----------------------------------------------------------------
+!22 node_store: 
+!22 node_store: 
+--num_gpus=2: command not found
+Thu Jan 21 18:55:06 KST 2021
+Thu Jan 21 18:55:06 KST 2021
+2021-01-21 18:55:08.355807: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-01-21 18:55:08.627859: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:02:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:55:08.766346: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:55:08.924725: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:82:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:55:09.072559: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 3 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:83:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:55:09.074506: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:55:09.079866: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:55:09.079886: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:55:09.079894: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:55:09.079900: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:55:09.079905: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:55:09.079909: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:55:09.082867: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:55:09.083812: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:55:09.085037: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:55:09.085677: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+TensorFlow:  1.12
+Model:       alexnet
+Dataset:     cifar10
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  32 global
+             32.0 per device
+Num batches: 100
+Num epochs:  0.06
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+W0121 18:55:09.098335 140348736177984 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W0121 18:55:12.784135 140348736177984 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:866: slice_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(tuple(tensor_list)).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:55:12.788770 140348736177984 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:374: range_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.range(limit).shuffle(limit).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:55:12.791317 140348736177984 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:320: input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(input_tensor).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:55:12.792327 140348736177984 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:190: limit_epochs (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensors(tensor).repeat(num_epochs)`.
+W0121 18:55:12.794304 140348736177984 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:55:12.795444 140348736177984 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:55:12.796152 140348736177984 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:202: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+W0121 18:55:12.803284 140348736177984 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:876: shuffle_batch (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.shuffle(min_after_dequeue).batch(batch_size)`.
+W0121 18:55:14.028562 140348736177984 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:126: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+W0121 18:55:14.043821 140348736177984 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:250: max_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.max_pooling2d instead.
+Initializing graph
+W0121 18:55:14.228486 140348736177984 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2157: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2021-01-21 18:55:15.408847: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:55:15.409088: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:55:15.409101: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:55:15.409108: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:55:15.409114: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:55:15.409119: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:55:15.409124: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:55:15.411301: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:55:15.411844: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:55:15.412630: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:55:15.413351: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+2021-01-21 18:55:16.194446: I tensorflow/core/common_runtime/placer.cc:834] 190812-final[JH] Placer::Run
+2021-01-21 18:55:16.194490: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:CPU:0, 1/5
+2021-01-21 18:55:16.194503: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:0, 2/5
+2021-01-21 18:55:16.194515: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:1, 3/5
+2021-01-21 18:55:16.194538: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:2, 4/5
+2021-01-21 18:55:16.194553: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:3, 5/5
+global_step/Initializer/zeros: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/Assign: (Assign): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+AddRecv IsControlEdge
+I0121 18:55:17.753755 140348736177984 session_manager.py:491] Running local_init_op.
+!22 node_store: 
+I0121 18:55:18.548367 140348736177984 session_manager.py:493] Done running local_init_op.
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+I0121 18:55:19.426454 140348736177984 supervisor.py:733] Starting standard services.
+W0121 18:55:19.426787 140348736177984 supervisor.py:668] Standard services need a 'logdir' passed to the SessionManager
+I0121 18:55:19.426923 140348736177984 supervisor.py:740] Starting queue runners.
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_global_step_0_0: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+Running warm up
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/read: (Identity): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd/value: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd: (AssignAdd): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_inc_global_step/AssignAdd_0_1: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+AddRecv IsControlEdge
+2021-01-21 18:55:39.799678: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 8036.5 +/- 0.0 (jitter = 0.0)	2.295
+10	images/sec: 8130.9 +/- 272.3 (jitter = 467.2)	2.395
+20	images/sec: 8199.5 +/- 193.8 (jitter = 984.6)	2.148
+30	images/sec: 8411.0 +/- 167.1 (jitter = 950.0)	2.141
+40	images/sec: 8601.2 +/- 144.7 (jitter = 1143.8)	2.175
+50	images/sec: 8716.7 +/- 126.6 (jitter = 1069.0)	2.091
+60	images/sec: 8772.4 +/- 110.9 (jitter = 1037.5)	1.951
+70	images/sec: 8776.9 +/- 103.8 (jitter = 1016.8)	2.140
+80	images/sec: 8804.7 +/- 97.2 (jitter = 955.8)	2.100
+90	images/sec: 8835.7 +/- 89.9 (jitter = 931.0)	1.949
+100	images/sec: 8851.1 +/- 85.6 (jitter = 887.8)	2.105
+training_time:  0.3692464828491211
+----------------------------------------------------------------
+total images/sec: 8666.30
+----------------------------------------------------------------
+!22 node_store: 
+!22 node_store: 
+--num_gpus=2: command not found
+Thu Jan 21 18:55:44 KST 2021
+Thu Jan 21 18:55:44 KST 2021
+2021-01-21 18:55:46.547331: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-01-21 18:55:46.796181: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:02:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:55:46.929067: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:55:47.088141: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:82:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:55:47.230814: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 3 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:83:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:55:47.232579: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:55:47.237271: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:55:47.237287: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:55:47.237310: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:55:47.237315: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:55:47.237319: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:55:47.237325: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:55:47.239779: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:55:47.240835: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:55:47.241255: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:55:47.241874: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+TensorFlow:  1.12
+Model:       alexnet
+Dataset:     cifar10
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  64 global
+             64.0 per device
+Num batches: 100
+Num epochs:  0.13
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+W0121 18:55:47.255533 140026489169728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W0121 18:55:50.928100 140026489169728 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:866: slice_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(tuple(tensor_list)).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:55:50.933810 140026489169728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:374: range_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.range(limit).shuffle(limit).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:55:50.936552 140026489169728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:320: input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(input_tensor).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:55:50.937600 140026489169728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:190: limit_epochs (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensors(tensor).repeat(num_epochs)`.
+W0121 18:55:50.939876 140026489169728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:55:50.941138 140026489169728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:55:50.941804 140026489169728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:202: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+W0121 18:55:50.949683 140026489169728 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:876: shuffle_batch (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.shuffle(min_after_dequeue).batch(batch_size)`.
+W0121 18:55:53.462153 140026489169728 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:126: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+W0121 18:55:53.477862 140026489169728 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:250: max_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.max_pooling2d instead.
+Initializing graph
+W0121 18:55:53.664678 140026489169728 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2157: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2021-01-21 18:55:54.928462: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:55:54.928726: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:55:54.928739: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:55:54.928748: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:55:54.928753: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:55:54.928757: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:55:54.928778: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:55:54.931024: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:55:54.931668: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:55:54.932474: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:55:54.933067: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+2021-01-21 18:55:55.807775: I tensorflow/core/common_runtime/placer.cc:834] 190812-final[JH] Placer::Run
+2021-01-21 18:55:55.807842: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:CPU:0, 1/5
+2021-01-21 18:55:55.807852: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:0, 2/5
+2021-01-21 18:55:55.807857: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:1, 3/5
+2021-01-21 18:55:55.807866: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:2, 4/5
+2021-01-21 18:55:55.807871: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:3, 5/5
+global_step/Initializer/zeros: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/Assign: (Assign): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+AddRecv IsControlEdge
+I0121 18:55:57.181544 140026489169728 session_manager.py:491] Running local_init_op.
+!22 node_store: 
+I0121 18:55:57.969749 140026489169728 session_manager.py:493] Done running local_init_op.
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+I0121 18:55:58.775136 140026489169728 supervisor.py:733] Starting standard services.
+W0121 18:55:58.775498 140026489169728 supervisor.py:668] Standard services need a 'logdir' passed to the SessionManager
+I0121 18:55:58.775634 140026489169728 supervisor.py:740] Starting queue runners.
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_global_step_0_0: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+Running warm up
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/read: (Identity): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd/value: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd: (AssignAdd): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_inc_global_step/AssignAdd_0_1: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+AddRecv IsControlEdge
+2021-01-21 18:56:19.644258: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 9456.6 +/- 0.0 (jitter = 0.0)	2.325
+10	images/sec: 8224.5 +/- 302.0 (jitter = 992.0)	2.270
+20	images/sec: 8256.3 +/- 205.5 (jitter = 992.0)	2.196
+30	images/sec: 8247.6 +/- 232.9 (jitter = 1361.4)	2.054
+40	images/sec: 8357.7 +/- 218.5 (jitter = 1361.4)	2.010
+50	images/sec: 8593.4 +/- 196.8 (jitter = 1482.5)	2.203
+60	images/sec: 8743.9 +/- 176.8 (jitter = 1544.0)	2.033
+70	images/sec: 8888.9 +/- 164.9 (jitter = 1525.2)	1.995
+80	images/sec: 9092.6 +/- 161.6 (jitter = 1559.0)	2.116
+90	images/sec: 9192.6 +/- 150.4 (jitter = 1454.2)	1.988
+100	images/sec: 9257.9 +/- 140.1 (jitter = 1342.5)	2.241
+training_time:  0.700145959854126
+----------------------------------------------------------------
+total images/sec: 9140.95
+----------------------------------------------------------------
+!22 node_store: 
+!22 node_store: 
+--num_gpus=2: command not found
+Thu Jan 21 18:56:24 KST 2021
+Thu Jan 21 18:56:24 KST 2021
+2021-01-21 18:56:26.847234: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-01-21 18:56:27.090218: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:02:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:56:27.222624: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:56:27.376472: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:82:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:56:27.524713: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 3 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:83:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:56:27.527325: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:56:27.534581: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:56:27.534608: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:56:27.534625: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:56:27.534637: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:56:27.534666: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:56:27.534678: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:56:27.538741: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:56:27.540086: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:56:27.540709: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:56:27.541492: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+TensorFlow:  1.12
+Model:       resnet20
+Dataset:     cifar10
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  16 global
+             16.0 per device
+Num batches: 100
+Num epochs:  0.03
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+W0121 18:56:27.555742 140427664566080 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W0121 18:56:31.187139 140427664566080 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:866: slice_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(tuple(tensor_list)).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:56:31.191882 140427664566080 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:374: range_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.range(limit).shuffle(limit).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:56:31.194458 140427664566080 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:320: input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(input_tensor).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:56:31.195446 140427664566080 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:190: limit_epochs (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensors(tensor).repeat(num_epochs)`.
+W0121 18:56:31.197564 140427664566080 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:56:31.198715 140427664566080 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:56:31.199376 140427664566080 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:202: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+W0121 18:56:31.206740 140427664566080 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:876: shuffle_batch (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.shuffle(min_after_dequeue).batch(batch_size)`.
+W0121 18:56:31.876712 140427664566080 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:126: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+W0121 18:56:32.122863 140427664566080 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:250: average_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.average_pooling2d instead.
+W0121 18:56:32.682372 140427664566080 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/ops/math_ops.py:3086: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Initializing graph
+W0121 18:56:33.146399 140427664566080 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2157: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2021-01-21 18:56:34.399379: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:56:34.399648: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:56:34.399661: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:56:34.399668: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:56:34.399674: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:56:34.399678: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:56:34.399682: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:56:34.401881: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:56:34.402387: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:56:34.403243: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:56:34.403948: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+2021-01-21 18:56:35.181728: I tensorflow/core/common_runtime/placer.cc:834] 190812-final[JH] Placer::Run
+2021-01-21 18:56:35.181774: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:CPU:0, 1/5
+2021-01-21 18:56:35.181788: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:0, 2/5
+2021-01-21 18:56:35.181802: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:1, 3/5
+2021-01-21 18:56:35.181820: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:2, 4/5
+2021-01-21 18:56:35.181838: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:3, 5/5
+global_step/Initializer/zeros: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/Assign: (Assign): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+AddRecv IsControlEdge
+I0121 18:56:36.843570 140427664566080 session_manager.py:491] Running local_init_op.
+!22 node_store: 
+I0121 18:56:37.649013 140427664566080 session_manager.py:493] Done running local_init_op.
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+I0121 18:56:38.484052 140427664566080 supervisor.py:733] Starting standard services.
+W0121 18:56:38.484379 140427664566080 supervisor.py:668] Standard services need a 'logdir' passed to the SessionManager
+I0121 18:56:38.484512 140427664566080 supervisor.py:740] Starting queue runners.
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_global_step_0_0: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+Running warm up
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/read: (Identity): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd/value: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd: (AssignAdd): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_inc_global_step/AssignAdd_0_1: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+AddRecv IsControlEdge
+AddRecv IsControlEdge
+2021-01-21 18:56:59.727785: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 1198.0 +/- 0.0 (jitter = 0.0)	2.779
+10	images/sec: 1222.6 +/- 48.3 (jitter = 137.7)	2.386
+20	images/sec: 1340.7 +/- 48.1 (jitter = 242.4)	2.236
+30	images/sec: 1403.8 +/- 41.6 (jitter = 245.0)	2.413
+40	images/sec: 1430.6 +/- 37.3 (jitter = 259.6)	2.683
+50	images/sec: 1421.9 +/- 31.4 (jitter = 219.8)	2.163
+60	images/sec: 1409.5 +/- 28.5 (jitter = 218.5)	2.408
+70	images/sec: 1400.2 +/- 25.7 (jitter = 193.1)	2.617
+80	images/sec: 1384.5 +/- 23.4 (jitter = 182.9)	1.722
+90	images/sec: 1403.8 +/- 22.6 (jitter = 200.2)	1.934
+100	images/sec: 1434.5 +/- 23.2 (jitter = 239.1)	2.057
+training_time:  1.12851881980896
+----------------------------------------------------------------
+total images/sec: 1417.79
+----------------------------------------------------------------
+!22 node_store: 
+!22 node_store: 
+--num_gpus=2: command not found
+Thu Jan 21 18:57:05 KST 2021
+Thu Jan 21 18:57:05 KST 2021
+2021-01-21 18:57:07.416720: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-01-21 18:57:07.658242: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:02:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:57:07.829358: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:57:07.996291: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:82:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:57:08.133318: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 3 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:83:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:57:08.135270: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:57:08.142072: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:57:08.142093: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:57:08.142101: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:57:08.142106: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:57:08.142111: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:57:08.142117: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:57:08.144997: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:57:08.145481: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:57:08.146243: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:57:08.146849: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+TensorFlow:  1.12
+Model:       resnet20
+Dataset:     cifar10
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  32 global
+             32.0 per device
+Num batches: 100
+Num epochs:  0.06
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+W0121 18:57:08.160132 139800649553728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W0121 18:57:11.778148 139800649553728 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:866: slice_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(tuple(tensor_list)).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:57:11.782411 139800649553728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:374: range_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.range(limit).shuffle(limit).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:57:11.784814 139800649553728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:320: input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(input_tensor).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:57:11.785748 139800649553728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:190: limit_epochs (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensors(tensor).repeat(num_epochs)`.
+W0121 18:57:11.787772 139800649553728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:57:11.788931 139800649553728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:57:11.789577 139800649553728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:202: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+W0121 18:57:11.796773 139800649553728 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:876: shuffle_batch (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.shuffle(min_after_dequeue).batch(batch_size)`.
+W0121 18:57:13.059796 139800649553728 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:126: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+W0121 18:57:13.306023 139800649553728 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:250: average_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.average_pooling2d instead.
+W0121 18:57:13.937324 139800649553728 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/ops/math_ops.py:3086: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Initializing graph
+W0121 18:57:14.332439 139800649553728 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2157: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2021-01-21 18:57:15.621149: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:57:15.621371: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:57:15.621384: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:57:15.621390: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:57:15.621396: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:57:15.621401: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:57:15.621405: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:57:15.623645: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:57:15.624643: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:57:15.625098: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:57:15.625580: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+2021-01-21 18:57:16.427725: I tensorflow/core/common_runtime/placer.cc:834] 190812-final[JH] Placer::Run
+2021-01-21 18:57:16.427807: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:CPU:0, 1/5
+2021-01-21 18:57:16.427822: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:0, 2/5
+2021-01-21 18:57:16.427835: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:1, 3/5
+2021-01-21 18:57:16.427847: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:2, 4/5
+2021-01-21 18:57:16.427859: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:3, 5/5
+global_step/Initializer/zeros: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/Assign: (Assign): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+AddRecv IsControlEdge
+I0121 18:57:17.906372 139800649553728 session_manager.py:491] Running local_init_op.
+!22 node_store: 
+I0121 18:57:18.705760 139800649553728 session_manager.py:493] Done running local_init_op.
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+I0121 18:57:19.551256 139800649553728 supervisor.py:733] Starting standard services.
+W0121 18:57:19.551630 139800649553728 supervisor.py:668] Standard services need a 'logdir' passed to the SessionManager
+I0121 18:57:19.551762 139800649553728 supervisor.py:740] Starting queue runners.
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_global_step_0_0: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+Running warm up
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/read: (Identity): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd/value: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd: (AssignAdd): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_inc_global_step/AssignAdd_0_1: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+AddRecv IsControlEdge
+AddRecv IsControlEdge
+2021-01-21 18:57:46.232379: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 3016.7 +/- 0.0 (jitter = 0.0)	2.382
+10	images/sec: 3053.4 +/- 60.0 (jitter = 137.0)	2.560
+20	images/sec: 3158.5 +/- 50.5 (jitter = 197.5)	2.366
+30	images/sec: 3079.5 +/- 47.5 (jitter = 288.6)	3.022
+40	images/sec: 3078.3 +/- 38.5 (jitter = 237.6)	1.889
+50	images/sec: 3160.9 +/- 40.7 (jitter = 298.6)	2.877
+60	images/sec: 3203.3 +/- 36.3 (jitter = 313.8)	2.004
+70	images/sec: 3228.8 +/- 32.9 (jitter = 281.7)	2.197
+80	images/sec: 3219.7 +/- 30.7 (jitter = 299.6)	2.036
+90	images/sec: 3162.8 +/- 31.7 (jitter = 349.7)	1.953
+100	images/sec: 3105.0 +/- 33.3 (jitter = 375.2)	2.165
+training_time:  1.041457176208496
+----------------------------------------------------------------
+total images/sec: 3072.62
+----------------------------------------------------------------
+!22 node_store: 
+!22 node_store: 
+--num_gpus=2: command not found
+Thu Jan 21 18:57:51 KST 2021
+Thu Jan 21 18:57:51 KST 2021
+2021-01-21 18:57:53.898716: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-01-21 18:57:54.147140: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:02:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:57:54.283086: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:57:54.434434: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:82:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:57:54.570045: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 3 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:83:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:57:54.572013: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:57:54.577050: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:57:54.577070: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:57:54.577078: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:57:54.577084: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:57:54.577089: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:57:54.577094: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:57:54.579760: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:57:54.580594: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:57:54.581191: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:57:54.581885: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+TensorFlow:  1.12
+Model:       resnet20
+Dataset:     cifar10
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  64 global
+             64.0 per device
+Num batches: 100
+Num epochs:  0.13
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+W0121 18:57:54.596578 139678482544448 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W0121 18:57:58.374117 139678482544448 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:866: slice_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(tuple(tensor_list)).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:57:58.377962 139678482544448 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:374: range_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.range(limit).shuffle(limit).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:57:58.380395 139678482544448 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:320: input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(input_tensor).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:57:58.381323 139678482544448 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:190: limit_epochs (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensors(tensor).repeat(num_epochs)`.
+W0121 18:57:58.383238 139678482544448 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:57:58.384418 139678482544448 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:57:58.385066 139678482544448 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:202: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+W0121 18:57:58.392351 139678482544448 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:876: shuffle_batch (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.shuffle(min_after_dequeue).batch(batch_size)`.
+W0121 18:58:00.940613 139678482544448 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:126: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+W0121 18:58:01.200167 139678482544448 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:250: average_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.average_pooling2d instead.
+W0121 18:58:01.877344 139678482544448 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/ops/math_ops.py:3086: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Initializing graph
+W0121 18:58:02.300971 139678482544448 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2157: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2021-01-21 18:58:03.697657: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:58:03.697893: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:58:03.697908: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:58:03.697916: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:58:03.697922: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:58:03.697926: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:58:03.697948: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:58:03.700189: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:58:03.700740: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:58:03.701247: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:58:03.701741: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+2021-01-21 18:58:04.517594: I tensorflow/core/common_runtime/placer.cc:834] 190812-final[JH] Placer::Run
+2021-01-21 18:58:04.517666: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:CPU:0, 1/5
+2021-01-21 18:58:04.517672: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:0, 2/5
+2021-01-21 18:58:04.517677: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:1, 3/5
+2021-01-21 18:58:04.517681: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:2, 4/5
+2021-01-21 18:58:04.517688: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:3, 5/5
+global_step/Initializer/zeros: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/Assign: (Assign): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+AddRecv IsControlEdge
+I0121 18:58:05.981115 139678482544448 session_manager.py:491] Running local_init_op.
+!22 node_store: 
+I0121 18:58:06.801262 139678482544448 session_manager.py:493] Done running local_init_op.
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+I0121 18:58:07.735492 139678482544448 supervisor.py:733] Starting standard services.
+W0121 18:58:07.736142 139678482544448 supervisor.py:668] Standard services need a 'logdir' passed to the SessionManager
+I0121 18:58:07.736284 139678482544448 supervisor.py:740] Starting queue runners.
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_global_step_0_0: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+Running warm up
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/read: (Identity): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd/value: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd: (AssignAdd): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_inc_global_step/AssignAdd_0_1: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+AddRecv IsControlEdge
+AddRecv IsControlEdge
+2021-01-21 18:58:30.470749: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 4450.0 +/- 0.0 (jitter = 0.0)	2.095
+10	images/sec: 4904.0 +/- 116.0 (jitter = 473.1)	2.265
+20	images/sec: 4946.6 +/- 83.8 (jitter = 528.7)	2.021
+30	images/sec: 4989.3 +/- 71.8 (jitter = 601.5)	2.072
+40	images/sec: 4930.5 +/- 74.4 (jitter = 573.2)	2.009
+50	images/sec: 4949.1 +/- 65.7 (jitter = 541.1)	1.923
+60	images/sec: 5068.1 +/- 66.3 (jitter = 570.9)	2.197
+70	images/sec: 5104.6 +/- 63.4 (jitter = 571.0)	1.743
+80	images/sec: 5100.5 +/- 62.6 (jitter = 588.1)	1.788
+90	images/sec: 5156.9 +/- 58.2 (jitter = 564.8)	2.142
+100	images/sec: 5129.9 +/- 56.8 (jitter = 598.1)	1.897
+training_time:  1.2592921257019043
+----------------------------------------------------------------
+total images/sec: 5082.22
+----------------------------------------------------------------
+!22 node_store: 
+!22 node_store: 
+--num_gpus=2: command not found
+Thu Jan 21 18:58:36 KST 2021
+Thu Jan 21 18:58:36 KST 2021
+2021-01-21 18:58:38.522347: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-01-21 18:58:38.762388: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:02:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:58:38.884627: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:58:39.027678: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:82:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:58:39.162016: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 3 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:83:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:58:39.163964: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:58:39.169303: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:58:39.169323: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:58:39.169331: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:58:39.169336: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:58:39.169341: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:58:39.169346: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:58:39.172238: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:58:39.172815: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:58:39.173422: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:58:39.174221: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+TensorFlow:  1.12
+Model:       resnet32
+Dataset:     cifar10
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  16 global
+             16.0 per device
+Num batches: 100
+Num epochs:  0.03
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+W0121 18:58:39.188445 140182364686144 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W0121 18:58:42.856610 140182364686144 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:866: slice_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(tuple(tensor_list)).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:58:42.860749 140182364686144 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:374: range_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.range(limit).shuffle(limit).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:58:42.863169 140182364686144 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:320: input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(input_tensor).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:58:42.864146 140182364686144 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:190: limit_epochs (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensors(tensor).repeat(num_epochs)`.
+W0121 18:58:42.866043 140182364686144 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:58:42.867199 140182364686144 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:58:42.867888 140182364686144 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:202: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+W0121 18:58:42.874778 140182364686144 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:876: shuffle_batch (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.shuffle(min_after_dequeue).batch(batch_size)`.
+W0121 18:58:43.564284 140182364686144 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:126: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+W0121 18:58:43.947967 140182364686144 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:250: average_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.average_pooling2d instead.
+W0121 18:58:44.904467 140182364686144 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/ops/math_ops.py:3086: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Initializing graph
+W0121 18:58:45.488794 140182364686144 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2157: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2021-01-21 18:58:46.815232: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:58:46.815487: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:58:46.815500: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:58:46.815507: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:58:46.815513: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:58:46.815517: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:58:46.815524: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:58:46.817785: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:58:46.818881: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:58:46.819299: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:58:46.819744: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+2021-01-21 18:58:47.690061: I tensorflow/core/common_runtime/placer.cc:834] 190812-final[JH] Placer::Run
+2021-01-21 18:58:47.690149: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:CPU:0, 1/5
+2021-01-21 18:58:47.690163: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:0, 2/5
+2021-01-21 18:58:47.690175: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:1, 3/5
+2021-01-21 18:58:47.690186: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:2, 4/5
+2021-01-21 18:58:47.690198: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:3, 5/5
+global_step/Initializer/zeros: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/Assign: (Assign): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+AddRecv IsControlEdge
+I0121 18:58:49.221118 140182364686144 session_manager.py:491] Running local_init_op.
+!22 node_store: 
+I0121 18:58:50.015749 140182364686144 session_manager.py:493] Done running local_init_op.
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+I0121 18:58:50.957967 140182364686144 supervisor.py:733] Starting standard services.
+W0121 18:58:50.958244 140182364686144 supervisor.py:668] Standard services need a 'logdir' passed to the SessionManager
+I0121 18:58:50.958330 140182364686144 supervisor.py:740] Starting queue runners.
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_global_step_0_0: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+Running warm up
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/read: (Identity): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd/value: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd: (AssignAdd): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_inc_global_step/AssignAdd_0_1: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+AddRecv IsControlEdge
+AddRecv IsControlEdge
+2021-01-21 18:59:16.819777: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 639.2 +/- 0.0 (jitter = 0.0)	4.033
+10	images/sec: 962.6 +/- 57.2 (jitter = 184.0)	2.451
+20	images/sec: 1085.7 +/- 41.3 (jitter = 101.8)	2.362
+30	images/sec: 1084.7 +/- 40.8 (jitter = 221.1)	2.724
+40	images/sec: 1052.3 +/- 34.2 (jitter = 250.3)	2.620
+50	images/sec: 1047.8 +/- 29.0 (jitter = 209.5)	2.184
+60	images/sec: 1075.9 +/- 25.3 (jitter = 146.8)	2.258
+70	images/sec: 1032.7 +/- 24.8 (jitter = 227.1)	2.489
+80	images/sec: 1006.2 +/- 23.5 (jitter = 253.6)	1.953
+90	images/sec: 975.4 +/- 22.8 (jitter = 270.0)	2.200
+100	images/sec: 963.4 +/- 21.1 (jitter = 235.6)	2.210
+training_time:  1.6734552383422852
+----------------------------------------------------------------
+total images/sec: 956.11
+----------------------------------------------------------------
+!22 node_store: 
+!22 node_store: 
+--num_gpus=2: command not found
+Thu Jan 21 18:59:23 KST 2021
+Thu Jan 21 18:59:23 KST 2021
+2021-01-21 18:59:24.999946: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-01-21 18:59:25.244243: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:02:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:59:25.370257: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:59:25.521578: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:82:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:59:25.683746: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 3 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:83:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 18:59:25.686558: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:59:25.694518: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:59:25.694546: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:59:25.694557: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:59:25.694565: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:59:25.694573: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:59:25.694584: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:59:25.699009: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:59:25.699929: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:59:25.700410: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:59:25.701103: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+TensorFlow:  1.12
+Model:       resnet32
+Dataset:     cifar10
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  32 global
+             32.0 per device
+Num batches: 100
+Num epochs:  0.06
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+W0121 18:59:25.715272 139794389067584 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W0121 18:59:29.383881 139794389067584 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:866: slice_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(tuple(tensor_list)).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:59:29.390420 139794389067584 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:374: range_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.range(limit).shuffle(limit).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:59:29.393100 139794389067584 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:320: input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(input_tensor).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 18:59:29.394093 139794389067584 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:190: limit_epochs (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensors(tensor).repeat(num_epochs)`.
+W0121 18:59:29.396324 139794389067584 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:59:29.397525 139794389067584 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 18:59:29.398167 139794389067584 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:202: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+W0121 18:59:29.405867 139794389067584 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:876: shuffle_batch (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.shuffle(min_after_dequeue).batch(batch_size)`.
+W0121 18:59:30.670349 139794389067584 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:126: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+W0121 18:59:31.054741 139794389067584 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:250: average_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.average_pooling2d instead.
+W0121 18:59:32.007568 139794389067584 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/ops/math_ops.py:3086: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Initializing graph
+W0121 18:59:32.589619 139794389067584 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2157: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2021-01-21 18:59:34.026168: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 18:59:34.026415: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 18:59:34.026427: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 18:59:34.026435: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 18:59:34.026458: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 18:59:34.026462: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 18:59:34.026467: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 18:59:34.028716: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 18:59:34.029279: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 18:59:34.030260: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 18:59:34.030889: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+2021-01-21 18:59:34.829275: I tensorflow/core/common_runtime/placer.cc:834] 190812-final[JH] Placer::Run
+2021-01-21 18:59:34.829321: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:CPU:0, 1/5
+2021-01-21 18:59:34.829335: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:0, 2/5
+2021-01-21 18:59:34.829347: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:1, 3/5
+2021-01-21 18:59:34.829357: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:2, 4/5
+2021-01-21 18:59:34.829369: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:3, 5/5
+global_step/Initializer/zeros: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/Assign: (Assign): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+AddRecv IsControlEdge
+I0121 18:59:36.567443 139794389067584 session_manager.py:491] Running local_init_op.
+!22 node_store: 
+I0121 18:59:37.385481 139794389067584 session_manager.py:493] Done running local_init_op.
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+I0121 18:59:38.269740 139794389067584 supervisor.py:733] Starting standard services.
+W0121 18:59:38.270062 139794389067584 supervisor.py:668] Standard services need a 'logdir' passed to the SessionManager
+I0121 18:59:38.270182 139794389067584 supervisor.py:740] Starting queue runners.
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_global_step_0_0: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+Running warm up
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/read: (Identity): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd/value: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd: (AssignAdd): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_inc_global_step/AssignAdd_0_1: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+AddRecv IsControlEdge
+AddRecv IsControlEdge
+2021-01-21 18:59:59.815079: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 2329.9 +/- 0.0 (jitter = 0.0)	2.877
+10	images/sec: 2104.9 +/- 62.8 (jitter = 155.2)	2.843
+20	images/sec: 2020.5 +/- 53.3 (jitter = 242.3)	2.374
+30	images/sec: 1871.4 +/- 51.2 (jitter = 365.8)	2.770
+40	images/sec: 1887.9 +/- 42.4 (jitter = 363.0)	1.854
+50	images/sec: 1926.5 +/- 39.8 (jitter = 414.6)	2.980
+60	images/sec: 1883.2 +/- 36.5 (jitter = 370.1)	2.022
+70	images/sec: 1876.4 +/- 32.8 (jitter = 362.0)	2.232
+80	images/sec: 1915.3 +/- 31.3 (jitter = 399.8)	2.170
+90	images/sec: 1942.2 +/- 30.1 (jitter = 337.6)	2.107
+100	images/sec: 1953.9 +/- 28.7 (jitter = 339.0)	2.294
+training_time:  1.6503560543060303
+----------------------------------------------------------------
+total images/sec: 1938.98
+----------------------------------------------------------------
+!22 node_store: 
+!22 node_store: 
+--num_gpus=2: command not found
+Thu Jan 21 19:00:06 KST 2021
+Thu Jan 21 19:00:06 KST 2021
+2021-01-21 19:00:08.137446: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-01-21 19:00:08.386787: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:02:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:00:08.519110: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:00:08.662469: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:82:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:00:08.805945: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 3 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:83:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:00:08.807911: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 19:00:08.826757: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 19:00:08.826795: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 19:00:08.826809: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 19:00:08.826818: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 19:00:08.826831: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 19:00:08.826841: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 19:00:08.831325: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 19:00:08.832788: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 19:00:08.833422: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 19:00:08.834000: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+TensorFlow:  1.12
+Model:       resnet32
+Dataset:     cifar10
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  64 global
+             64.0 per device
+Num batches: 100
+Num epochs:  0.13
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+W0121 19:00:08.847728 140021456164672 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W0121 19:00:12.472025 140021456164672 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:866: slice_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(tuple(tensor_list)).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 19:00:12.476747 140021456164672 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:374: range_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.range(limit).shuffle(limit).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 19:00:12.479158 140021456164672 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:320: input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(input_tensor).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 19:00:12.480113 140021456164672 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:190: limit_epochs (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensors(tensor).repeat(num_epochs)`.
+W0121 19:00:12.482033 140021456164672 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 19:00:12.483258 140021456164672 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 19:00:12.483942 140021456164672 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:202: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+W0121 19:00:12.491123 140021456164672 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:876: shuffle_batch (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.shuffle(min_after_dequeue).batch(batch_size)`.
+W0121 19:00:14.910919 140021456164672 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:126: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+W0121 19:00:15.296857 140021456164672 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:250: average_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.average_pooling2d instead.
+W0121 19:00:16.269223 140021456164672 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/ops/math_ops.py:3086: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Initializing graph
+W0121 19:00:16.850662 140021456164672 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2157: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2021-01-21 19:00:18.373287: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 19:00:18.373518: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 19:00:18.373530: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 19:00:18.373538: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 19:00:18.373543: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 19:00:18.373548: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 19:00:18.373568: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 19:00:18.375837: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 19:00:18.376928: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 19:00:18.377461: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 19:00:18.378160: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+2021-01-21 19:00:19.175445: I tensorflow/core/common_runtime/placer.cc:834] 190812-final[JH] Placer::Run
+2021-01-21 19:00:19.175494: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:CPU:0, 1/5
+2021-01-21 19:00:19.175506: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:0, 2/5
+2021-01-21 19:00:19.175518: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:1, 3/5
+2021-01-21 19:00:19.175529: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:2, 4/5
+2021-01-21 19:00:19.175540: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:3, 5/5
+global_step/Initializer/zeros: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/Assign: (Assign): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+AddRecv IsControlEdge
+I0121 19:00:20.827568 140021456164672 session_manager.py:491] Running local_init_op.
+!22 node_store: 
+I0121 19:00:21.718627 140021456164672 session_manager.py:493] Done running local_init_op.
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+I0121 19:00:22.708482 140021456164672 supervisor.py:733] Starting standard services.
+W0121 19:00:22.708821 140021456164672 supervisor.py:668] Standard services need a 'logdir' passed to the SessionManager
+I0121 19:00:22.708947 140021456164672 supervisor.py:740] Starting queue runners.
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_global_step_0_0: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+Running warm up
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/read: (Identity): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd/value: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd: (AssignAdd): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_inc_global_step/AssignAdd_0_1: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+AddRecv IsControlEdge
+AddRecv IsControlEdge
+2021-01-21 19:00:44.473902: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 3313.7 +/- 0.0 (jitter = 0.0)	2.476
+10	images/sec: 3454.5 +/- 80.4 (jitter = 213.1)	2.645
+20	images/sec: 3652.3 +/- 65.6 (jitter = 349.6)	2.121
+30	images/sec: 3735.5 +/- 48.7 (jitter = 189.1)	2.093
+40	images/sec: 3749.4 +/- 37.2 (jitter = 177.2)	2.144
+50	images/sec: 3769.8 +/- 30.7 (jitter = 156.5)	1.917
+60	images/sec: 3729.9 +/- 31.7 (jitter = 169.2)	2.379
+70	images/sec: 3744.0 +/- 27.9 (jitter = 148.4)	1.925
+80	images/sec: 3757.5 +/- 25.2 (jitter = 134.5)	1.752
+90	images/sec: 3763.1 +/- 22.6 (jitter = 129.1)	1.936
+100	images/sec: 3756.4 +/- 21.5 (jitter = 123.8)	2.012
+training_time:  1.7170724868774414
+----------------------------------------------------------------
+total images/sec: 3727.27
+----------------------------------------------------------------
+!22 node_store: 
+!22 node_store: 
+--num_gpus=2: command not found
+Thu Jan 21 19:00:51 KST 2021
+Thu Jan 21 19:00:51 KST 2021
+2021-01-21 19:00:53.129068: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-01-21 19:00:53.356332: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:02:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:00:53.519382: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:00:53.656997: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:82:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:00:53.790959: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 3 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:83:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:00:53.792932: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 19:00:53.802076: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 19:00:53.802113: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 19:00:53.802125: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 19:00:53.802134: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 19:00:53.802145: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 19:00:53.802155: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 19:00:53.806825: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 19:00:53.807561: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 19:00:53.808306: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 19:00:53.808947: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+TensorFlow:  1.12
+Model:       resnet56
+Dataset:     cifar10
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  16 global
+             16.0 per device
+Num batches: 100
+Num epochs:  0.03
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+W0121 19:00:53.823342 140541386151744 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W0121 19:00:57.512665 140541386151744 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:866: slice_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(tuple(tensor_list)).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 19:00:57.516480 140541386151744 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:374: range_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.range(limit).shuffle(limit).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 19:00:57.518994 140541386151744 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:320: input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(input_tensor).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 19:00:57.519931 140541386151744 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:190: limit_epochs (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensors(tensor).repeat(num_epochs)`.
+W0121 19:00:57.521804 140541386151744 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 19:00:57.522932 140541386151744 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 19:00:57.523590 140541386151744 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:202: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+W0121 19:00:57.530611 140541386151744 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:876: shuffle_batch (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.shuffle(min_after_dequeue).batch(batch_size)`.
+W0121 19:00:58.194531 140541386151744 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:126: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+W0121 19:00:58.854763 140541386151744 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:250: average_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.average_pooling2d instead.
+W0121 19:01:00.463350 140541386151744 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/ops/math_ops.py:3086: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Initializing graph
+W0121 19:01:01.515297 140541386151744 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2157: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2021-01-21 19:01:02.984857: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 19:01:02.985087: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 19:01:02.985100: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 19:01:02.985108: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 19:01:02.985114: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 19:01:02.985118: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 19:01:02.985123: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 19:01:02.987487: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 19:01:02.988121: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 19:01:02.989178: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 19:01:02.989677: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+2021-01-21 19:01:03.789012: I tensorflow/core/common_runtime/placer.cc:834] 190812-final[JH] Placer::Run
+2021-01-21 19:01:03.789059: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:CPU:0, 1/5
+2021-01-21 19:01:03.789074: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:0, 2/5
+2021-01-21 19:01:03.789088: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:1, 3/5
+2021-01-21 19:01:03.789107: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:2, 4/5
+2021-01-21 19:01:03.789119: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:3, 5/5
+global_step/Initializer/zeros: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/Assign: (Assign): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+AddRecv IsControlEdge
+I0121 19:01:05.695018 140541386151744 session_manager.py:491] Running local_init_op.
+!22 node_store: 
+I0121 19:01:06.535982 140541386151744 session_manager.py:493] Done running local_init_op.
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+I0121 19:01:07.501699 140541386151744 supervisor.py:733] Starting standard services.
+W0121 19:01:07.502003 140541386151744 supervisor.py:668] Standard services need a 'logdir' passed to the SessionManager
+I0121 19:01:07.502104 140541386151744 supervisor.py:740] Starting queue runners.
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_global_step_0_0: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+Running warm up
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/read: (Identity): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd/value: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd: (AssignAdd): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_inc_global_step/AssignAdd_0_1: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+AddRecv IsControlEdge
+AddRecv IsControlEdge
+2021-01-21 19:01:34.188714: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 636.8 +/- 0.0 (jitter = 0.0)	3.228
+10	images/sec: 495.7 +/- 29.2 (jitter = 73.7)	3.006
+20	images/sec: 533.7 +/- 18.3 (jitter = 92.4)	2.230
+30	images/sec: 595.6 +/- 23.3 (jitter = 170.1)	2.734
+40	images/sec: 587.7 +/- 18.6 (jitter = 148.0)	2.642
+50	images/sec: 593.7 +/- 15.9 (jitter = 135.3)	2.329
+60	images/sec: 599.3 +/- 15.0 (jitter = 153.8)	2.314
+70	images/sec: 594.6 +/- 13.3 (jitter = 140.4)	2.447
+80	images/sec: 586.7 +/- 12.4 (jitter = 129.9)	2.008
+90	images/sec: 582.5 +/- 11.4 (jitter = 114.9)	2.274
+100	images/sec: 583.8 +/- 11.0 (jitter = 116.7)	2.301
+training_time:  2.7530875205993652
+----------------------------------------------------------------
+total images/sec: 581.17
+----------------------------------------------------------------
+!22 node_store: 
+!22 node_store: 
+--num_gpus=2: command not found
+Thu Jan 21 19:01:41 KST 2021
+Thu Jan 21 19:01:41 KST 2021
+2021-01-21 19:01:43.898831: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-01-21 19:01:44.137800: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:02:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:01:44.264383: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:01:44.427726: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:82:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:01:44.576487: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 3 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:83:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:01:44.579372: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 19:01:44.587342: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 19:01:44.587370: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 19:01:44.587381: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 19:01:44.587389: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 19:01:44.587400: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 19:01:44.587410: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 19:01:44.592160: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 19:01:44.593142: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 19:01:44.593846: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 19:01:44.594614: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+TensorFlow:  1.12
+Model:       resnet56
+Dataset:     cifar10
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  32 global
+             32.0 per device
+Num batches: 100
+Num epochs:  0.06
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+W0121 19:01:44.610625 140110303999808 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W0121 19:01:48.254907 140110303999808 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:866: slice_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(tuple(tensor_list)).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 19:01:48.258485 140110303999808 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:374: range_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.range(limit).shuffle(limit).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 19:01:48.260778 140110303999808 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:320: input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(input_tensor).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 19:01:48.261661 140110303999808 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:190: limit_epochs (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensors(tensor).repeat(num_epochs)`.
+W0121 19:01:48.263347 140110303999808 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 19:01:48.264446 140110303999808 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 19:01:48.265063 140110303999808 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:202: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+W0121 19:01:48.271623 140110303999808 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:876: shuffle_batch (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.shuffle(min_after_dequeue).batch(batch_size)`.
+W0121 19:01:49.483229 140110303999808 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:126: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+W0121 19:01:50.231963 140110303999808 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:250: average_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.average_pooling2d instead.
+W0121 19:01:51.867950 140110303999808 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/ops/math_ops.py:3086: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Initializing graph
+W0121 19:01:52.837747 140110303999808 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2157: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2021-01-21 19:01:54.450032: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 19:01:54.450267: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 19:01:54.450279: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 19:01:54.450286: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 19:01:54.450292: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 19:01:54.450296: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 19:01:54.450300: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 19:01:54.452608: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 19:01:54.453186: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 19:01:54.453771: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 19:01:54.454220: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+2021-01-21 19:01:55.264168: I tensorflow/core/common_runtime/placer.cc:834] 190812-final[JH] Placer::Run
+2021-01-21 19:01:55.264214: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:CPU:0, 1/5
+2021-01-21 19:01:55.264227: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:0, 2/5
+2021-01-21 19:01:55.264238: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:1, 3/5
+2021-01-21 19:01:55.264249: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:2, 4/5
+2021-01-21 19:01:55.264260: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:3, 5/5
+global_step/Initializer/zeros: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/Assign: (Assign): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+AddRecv IsControlEdge
+I0121 19:01:57.058742 140110303999808 session_manager.py:491] Running local_init_op.
+!22 node_store: 
+I0121 19:01:57.893700 140110303999808 session_manager.py:493] Done running local_init_op.
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+I0121 19:01:58.894648 140110303999808 supervisor.py:733] Starting standard services.
+W0121 19:01:58.894948 140110303999808 supervisor.py:668] Standard services need a 'logdir' passed to the SessionManager
+I0121 19:01:58.895084 140110303999808 supervisor.py:740] Starting queue runners.
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_global_step_0_0: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+Running warm up
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/read: (Identity): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd/value: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd: (AssignAdd): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_inc_global_step/AssignAdd_0_1: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+AddRecv IsControlEdge
+AddRecv IsControlEdge
+2021-01-21 19:02:20.494202: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 1118.3 +/- 0.0 (jitter = 0.0)	2.827
+10	images/sec: 1108.3 +/- 45.0 (jitter = 122.3)	2.690
+20	images/sec: 1031.0 +/- 33.2 (jitter = 158.5)	2.369
+30	images/sec: 1044.9 +/- 29.9 (jitter = 175.9)	2.842
+40	images/sec: 1062.1 +/- 26.0 (jitter = 184.8)	2.111
+50	images/sec: 1107.6 +/- 25.2 (jitter = 260.1)	2.425
+60	images/sec: 1125.7 +/- 22.8 (jitter = 236.6)	2.273
+70	images/sec: 1138.3 +/- 20.7 (jitter = 227.7)	2.238
+80	images/sec: 1155.8 +/- 19.4 (jitter = 158.4)	2.251
+90	images/sec: 1168.5 +/- 17.8 (jitter = 137.5)	2.167
+100	images/sec: 1166.3 +/- 16.6 (jitter = 144.2)	2.255
+training_time:  2.757636070251465
+----------------------------------------------------------------
+total images/sec: 1160.41
+----------------------------------------------------------------
+!22 node_store: 
+!22 node_store: 
+--num_gpus=2: command not found
+Thu Jan 21 19:02:28 KST 2021
+Thu Jan 21 19:02:28 KST 2021
+2021-01-21 19:02:30.008379: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: SSE4.1 SSE4.2 AVX AVX2 FMA
+2021-01-21 19:02:30.231593: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 0 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:02:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:02:30.362984: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 1 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:03:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:02:30.504956: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 2 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:82:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:02:30.687242: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1433] Found device 3 with properties: 
+name: TITAN X (Pascal) major: 6 minor: 1 memoryClockRate(GHz): 1.531
+pciBusID: 0000:83:00.0
+totalMemory: 11.91GiB freeMemory: 11.77GiB
+2021-01-21 19:02:30.689443: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 19:02:30.695292: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 19:02:30.695315: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 19:02:30.695324: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 19:02:30.695330: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 19:02:30.695336: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 19:02:30.695342: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 19:02:30.698565: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 19:02:30.699382: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 19:02:30.699985: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 19:02:30.700909: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+TensorFlow:  1.12
+Model:       resnet56
+Dataset:     cifar10
+Mode:        BenchmarkMode.TRAIN
+SingleSess:  False
+Batch size:  64 global
+             64.0 per device
+Num batches: 100
+Num epochs:  0.13
+Devices:     ['/gpu:0']
+Data format: NCHW
+Optimizer:   sgd
+Variables:   parameter_server
+==========
+Generating training model
+W0121 19:02:30.713622 140617041827648 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/framework/op_def_library.py:263: colocate_with (from tensorflow.python.framework.ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Colocations handled automatically by placer.
+W0121 19:02:34.338990 140617041827648 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:866: slice_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(tuple(tensor_list)).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 19:02:34.343982 140617041827648 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:374: range_input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.range(limit).shuffle(limit).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 19:02:34.346650 140617041827648 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:320: input_producer (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensor_slices(input_tensor).shuffle(tf.shape(input_tensor, out_type=tf.int64)[0]).repeat(num_epochs)`. If `shuffle=False`, omit the `.shuffle(...)`.
+W0121 19:02:34.347683 140617041827648 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:190: limit_epochs (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.from_tensors(tensor).repeat(num_epochs)`.
+W0121 19:02:34.349909 140617041827648 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: QueueRunner.__init__ (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 19:02:34.351099 140617041827648 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:199: add_queue_runner (from tensorflow.python.training.queue_runner_impl) is deprecated and will be removed in a future version.
+Instructions for updating:
+To construct input pipelines, use the `tf.data` module.
+W0121 19:02:34.351772 140617041827648 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/training/input.py:202: to_float (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+W0121 19:02:34.359305 140617041827648 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/preprocessing.py:876: shuffle_batch (from tensorflow.python.training.input) is deprecated and will be removed in a future version.
+Instructions for updating:
+Queue-based input pipelines have been replaced by `tf.data`. Use `tf.data.Dataset.shuffle(min_after_dequeue).batch(batch_size)`.
+W0121 19:02:36.793249 140617041827648 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:126: conv2d (from tensorflow.python.layers.convolutional) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.conv2d instead.
+W0121 19:02:37.452988 140617041827648 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/convnet_builder.py:250: average_pooling2d (from tensorflow.python.layers.pooling) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use keras.layers.average_pooling2d instead.
+W0121 19:02:39.165826 140617041827648 deprecation.py:317] From /home/plum/tf1.12_py3/lib/python3.5/site-packages/tensorflow/python/ops/math_ops.py:3086: to_int32 (from tensorflow.python.ops.math_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.cast instead.
+Initializing graph
+W0121 19:02:40.126157 140617041827648 deprecation.py:317] From /home/plum/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarks/benchmark_cnn.py:2157: Supervisor.__init__ (from tensorflow.python.training.supervisor) is deprecated and will be removed in a future version.
+Instructions for updating:
+Please switch to tf.train.MonitoredTrainingSession
+2021-01-21 19:02:41.808503: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1512] Adding visible gpu devices: 0, 1, 2, 3
+2021-01-21 19:02:41.808787: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] Device interconnect StreamExecutor with strength 1 edge matrix:
+2021-01-21 19:02:41.808800: I tensorflow/core/common_runtime/gpu/gpu_device.cc:990]      0 1 2 3 
+2021-01-21 19:02:41.808807: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 0:   N Y N N 
+2021-01-21 19:02:41.808813: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 1:   Y N N N 
+2021-01-21 19:02:41.808817: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 2:   N N N Y 
+2021-01-21 19:02:41.808822: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1003] 3:   N N Y N 
+2021-01-21 19:02:41.811063: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 11448 MB memory) -> physical GPU (device: 0, name: TITAN X (Pascal), pci bus id: 0000:02:00.0, compute capability: 6.1)
+2021-01-21 19:02:41.811585: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:1 with 11448 MB memory) -> physical GPU (device: 1, name: TITAN X (Pascal), pci bus id: 0000:03:00.0, compute capability: 6.1)
+2021-01-21 19:02:41.812325: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:2 with 11448 MB memory) -> physical GPU (device: 2, name: TITAN X (Pascal), pci bus id: 0000:82:00.0, compute capability: 6.1)
+2021-01-21 19:02:41.812992: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1115] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:3 with 11448 MB memory) -> physical GPU (device: 3, name: TITAN X (Pascal), pci bus id: 0000:83:00.0, compute capability: 6.1)
+2021-01-21 19:02:42.745742: I tensorflow/core/common_runtime/placer.cc:834] 190812-final[JH] Placer::Run
+2021-01-21 19:02:42.745809: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:CPU:0, 1/5
+2021-01-21 19:02:42.745818: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:0, 2/5
+2021-01-21 19:02:42.745824: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:1, 3/5
+2021-01-21 19:02:42.745829: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:2, 4/5
+2021-01-21 19:02:42.745838: I tensorflow/core/common_runtime/placer.cc:838] 190812-final[JH] device list name: /job:localhost/replica:0/task:0/device:GPU:3, 5/5
+global_step/Initializer/zeros: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/Assign: (Assign): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+AddRecv IsControlEdge
+I0121 19:02:44.520839 140617041827648 session_manager.py:491] Running local_init_op.
+!22 node_store: 
+I0121 19:02:45.364740 140617041827648 session_manager.py:493] Done running local_init_op.
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+!22 node_store: 
+I0121 19:02:46.450341 140617041827648 supervisor.py:733] Starting standard services.
+W0121 19:02:46.450673 140617041827648 supervisor.py:668] Standard services need a 'logdir' passed to the SessionManager
+I0121 19:02:46.450804 140617041827648 supervisor.py:740] Starting queue runners.
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+!22 node_store: 
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_global_step_0_0: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+Running warm up
+global_step: (VariableV2): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+global_step/read: (Identity): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd/value: (Const): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+inc_global_step/AssignAdd: (AssignAdd): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 1
+_retval_inc_global_step/AssignAdd_0_1: (_Retval): /job:localhost/replica:0/task:0/device:CPU:0 num_outputs: 0
+!22 node_store: 
+AddRecv IsControlEdge
+AddRecv IsControlEdge
+2021-01-21 19:03:13.769226: I tensorflow/stream_executor/dso_loader.cc:152] successfully opened CUDA library libcublas.so.10.0 locally
+Done warm up
+Step	Img/sec	total_loss
+1	images/sec: 2114.4 +/- 0.0 (jitter = 0.0)	3.002
+10	images/sec: 2175.2 +/- 48.8 (jitter = 51.2)	2.418
+20	images/sec: 1991.7 +/- 52.6 (jitter = 274.3)	2.298
+30	images/sec: 1916.2 +/- 45.4 (jitter = 341.0)	2.201
+40	images/sec: 1954.0 +/- 38.3 (jitter = 299.4)	2.194
+50	images/sec: 2004.3 +/- 33.8 (jitter = 142.9)	1.985
+60	images/sec: 2004.8 +/- 30.5 (jitter = 214.9)	2.100
+70	images/sec: 1995.1 +/- 27.7 (jitter = 229.8)	1.892
+80	images/sec: 1959.0 +/- 27.0 (jitter = 282.2)	1.972
+90	images/sec: 1924.7 +/- 26.3 (jitter = 359.0)	2.006
+100	images/sec: 1907.6 +/- 24.6 (jitter = 331.0)	2.146
+training_time:  3.3692312240600586
+----------------------------------------------------------------
+total images/sec: 1899.54
+----------------------------------------------------------------
+!22 node_store: 
+!22 node_store: 
+--num_gpus=2: command not found
+Thu Jan 21 19:03:22 KST 2021
+(tf1.12_py3) (base) ]0;plum@shark3: ~/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf_cnn_benchmarksplum@shark3:~/hj_tf_cnn_rnn_benchmarks/benchmarks/scripts/tf__cnn_benchmarks$ exit
+exit
+
+Script done on Thu 21 Jan 2021 07:24:12 PM KST

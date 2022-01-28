@@ -1,0 +1,476 @@
+UID        PID  PPID  C STIME TTY          TIME CMD
+root         1     0  0  2020 ?        00:25:35 /usr/lib/systemd/systemd --switched-root --system --deserialize 21
+root         2     0  0  2020 ?        00:00:12 [kthreadd]
+root         3     2  0  2020 ?        00:00:14 [ksoftirqd/0]
+root         5     2  0  2020 ?        00:00:00 [kworker/0:0H]
+root         8     2  0  2020 ?        00:00:16 [migration/0]
+root         9     2  0  2020 ?        00:00:00 [rcu_bh]
+root        10     2  0  2020 ?        00:00:00 [rcuob/0]
+root        11     2  0  2020 ?        00:00:00 [rcuob/1]
+root        12     2  0  2020 ?        00:00:00 [rcuob/2]
+root        13     2  0  2020 ?        00:00:00 [rcuob/3]
+root        14     2  0  2020 ?        00:00:00 [rcuob/4]
+root        15     2  0  2020 ?        00:00:00 [rcuob/5]
+root        16     2  0  2020 ?        00:00:00 [rcuob/6]
+root        17     2  0  2020 ?        00:00:00 [rcuob/7]
+root        18     2  0  2020 ?        00:00:00 [rcuob/8]
+root        19     2  0  2020 ?        00:00:00 [rcuob/9]
+root        20     2  0  2020 ?        00:00:00 [rcuob/10]
+root        21     2  0  2020 ?        00:00:00 [rcuob/11]
+root        22     2  0  2020 ?        00:00:00 [rcuob/12]
+root        23     2  0  2020 ?        00:00:00 [rcuob/13]
+root        24     2  0  2020 ?        00:00:00 [rcuob/14]
+root        25     2  0  2020 ?        00:00:00 [rcuob/15]
+root        26     2  0  2020 ?        00:00:00 [rcuob/16]
+root        27     2  0  2020 ?        00:00:00 [rcuob/17]
+root        28     2  0  2020 ?        00:00:00 [rcuob/18]
+root        29     2  0  2020 ?        00:00:00 [rcuob/19]
+root        30     2  0  2020 ?        00:00:00 [rcuob/20]
+root        31     2  0  2020 ?        00:00:00 [rcuob/21]
+root        32     2  0  2020 ?        00:00:00 [rcuob/22]
+root        33     2  0  2020 ?        00:00:00 [rcuob/23]
+root        34     2  0  2020 ?        00:00:00 [rcuob/24]
+root        35     2  0  2020 ?        00:00:00 [rcuob/25]
+root        36     2  0  2020 ?        00:00:00 [rcuob/26]
+root        37     2  0  2020 ?        00:00:00 [rcuob/27]
+root        38     2  0  2020 ?        00:00:00 [rcuob/28]
+root        39     2  0  2020 ?        00:00:00 [rcuob/29]
+root        40     2  0  2020 ?        00:00:00 [rcuob/30]
+root        41     2  0  2020 ?        00:00:00 [rcuob/31]
+root        42     2  0  2020 ?        06:48:40 [rcu_sched]
+root        43     2  0  2020 ?        01:46:27 [rcuos/0]
+root        44     2  0  2020 ?        02:01:40 [rcuos/1]
+root        45     2  0  2020 ?        01:47:23 [rcuos/2]
+root        46     2  0  2020 ?        02:07:42 [rcuos/3]
+root        47     2  0  2020 ?        01:42:44 [rcuos/4]
+root        48     2  0  2020 ?        02:06:09 [rcuos/5]
+root        49     2  0  2020 ?        01:41:20 [rcuos/6]
+root        50     2  0  2020 ?        02:04:58 [rcuos/7]
+root        51     2  0  2020 ?        00:00:00 [rcuos/8]
+root        52     2  0  2020 ?        00:00:00 [rcuos/9]
+root        53     2  0  2020 ?        00:00:00 [rcuos/10]
+root        54     2  0  2020 ?        00:00:00 [rcuos/11]
+root        55     2  0  2020 ?        00:00:00 [rcuos/12]
+root        56     2  0  2020 ?        00:00:00 [rcuos/13]
+root        57     2  0  2020 ?        00:00:00 [rcuos/14]
+root        58     2  0  2020 ?        00:00:00 [rcuos/15]
+root        59     2  0  2020 ?        00:00:00 [rcuos/16]
+root        60     2  0  2020 ?        00:00:00 [rcuos/17]
+root        61     2  0  2020 ?        00:00:00 [rcuos/18]
+root        62     2  0  2020 ?        00:00:00 [rcuos/19]
+root        63     2  0  2020 ?        00:00:00 [rcuos/20]
+root        64     2  0  2020 ?        00:00:00 [rcuos/21]
+root        65     2  0  2020 ?        00:00:00 [rcuos/22]
+root        66     2  0  2020 ?        00:00:00 [rcuos/23]
+root        67     2  0  2020 ?        00:00:00 [rcuos/24]
+root        68     2  0  2020 ?        00:00:00 [rcuos/25]
+root        69     2  0  2020 ?        00:00:00 [rcuos/26]
+root        70     2  0  2020 ?        00:00:00 [rcuos/27]
+root        71     2  0  2020 ?        00:00:00 [rcuos/28]
+root        72     2  0  2020 ?        00:00:00 [rcuos/29]
+root        73     2  0  2020 ?        00:00:00 [rcuos/30]
+root        74     2  0  2020 ?        00:00:00 [rcuos/31]
+root        75     2  0  2020 ?        00:01:16 [watchdog/0]
+root        76     2  0  2020 ?        00:01:14 [watchdog/1]
+root        77     2  0  2020 ?        00:00:14 [migration/1]
+root        78     2  0  2020 ?        00:00:22 [ksoftirqd/1]
+root        80     2  0  2020 ?        00:00:00 [kworker/1:0H]
+root        82     2  0  2020 ?        00:01:06 [watchdog/2]
+root        83     2  0  2020 ?        00:01:30 [migration/2]
+root        84     2  0  2020 ?        00:00:14 [ksoftirqd/2]
+root        87     2  0  2020 ?        00:01:06 [watchdog/3]
+root        88     2  0  2020 ?        00:02:16 [migration/3]
+root        89     2  0  2020 ?        00:00:20 [ksoftirqd/3]
+root        91     2  0  2020 ?        00:00:00 [kworker/3:0H]
+root        92     2  0  2020 ?        00:01:05 [watchdog/4]
+root        93     2  0  2020 ?        00:00:24 [migration/4]
+root        94     2  0  2020 ?        00:00:14 [ksoftirqd/4]
+root        97     2  0  2020 ?        00:01:05 [watchdog/5]
+root        98     2  0  2020 ?        00:00:25 [migration/5]
+root        99     2  0  2020 ?        00:00:13 [ksoftirqd/5]
+root       102     2  0  2020 ?        00:01:05 [watchdog/6]
+root       103     2  0  2020 ?        00:00:14 [migration/6]
+root       104     2  0  2020 ?        00:00:16 [ksoftirqd/6]
+root       106     2  0  2020 ?        00:00:00 [kworker/6:0H]
+root       107     2  0  2020 ?        00:01:04 [watchdog/7]
+root       108     2  0  2020 ?        00:00:14 [migration/7]
+root       109     2  0  2020 ?        00:01:25 [ksoftirqd/7]
+root       111     2  0  2020 ?        00:00:00 [kworker/7:0H]
+root       112     2  0  2020 ?        00:00:00 [khelper]
+root       113     2  0  2020 ?        00:00:00 [kdevtmpfs]
+root       114     2  0  2020 ?        00:00:00 [netns]
+root       115     2  0  2020 ?        00:00:00 [perf]
+root       116     2  0  2020 ?        00:00:00 [writeback]
+root       117     2  0  2020 ?        00:00:00 [kintegrityd]
+root       118     2  0  2020 ?        00:00:00 [bioset]
+root       119     2  0  2020 ?        00:00:00 [kblockd]
+root       120     2  0  2020 ?        00:00:00 [md]
+root       125     2  0  2020 ?        00:00:18 [khungtaskd]
+root       126     2  0  2020 ?        02:14:34 [kswapd0]
+root       127     2  0  2020 ?        01:58:07 [kswapd1]
+root       128     2  0  2020 ?        00:00:00 [ksmd]
+root       129     2  0  2020 ?        00:02:34 [khugepaged]
+root       130     2  0  2020 ?        00:00:32 [fsnotify_mark]
+root       131     2  0  2020 ?        00:00:00 [crypto]
+root       139     2  0  2020 ?        00:00:00 [kthrotld]
+root       141     2  0  2020 ?        00:00:00 [kmpath_rdacd]
+root       144     2  0  2020 ?        00:00:00 [kpsmoused]
+root       165     2  0  2020 ?        00:00:00 [deferwq]
+root       198     2  0  2020 ?        00:01:34 [kauditd]
+cs20171+   336  1468  0  2020 pts/182  00:00:00 -bash
+root       339     2  0  2020 ?        00:00:00 [ata_sff]
+root       340     2  0  2020 ?        00:00:00 [mpt_poll_0]
+root       341     2  0  2020 ?        00:00:00 [mpt/0]
+root       351     2  0  2020 ?        00:00:00 [events_power_ef]
+root       367     2  0  2020 ?        00:00:00 [scsi_eh_0]
+root       368     2  0  2020 ?        00:00:00 [scsi_tmf_0]
+root       369     2  0  2020 ?        00:00:00 [scsi_eh_1]
+root       370     2  0  2020 ?        00:00:00 [scsi_tmf_1]
+root       374     2  0  2020 ?        00:00:00 [scsi_eh_2]
+root       375     2  0  2020 ?        00:00:00 [scsi_tmf_2]
+root       376     2  0  2020 ?        00:00:00 [scsi_eh_3]
+root       377     2  0  2020 ?        00:00:00 [scsi_tmf_3]
+root       384     2  0  2020 ?        00:00:00 [scsi_eh_4]
+root       385     2  0  2020 ?        00:00:00 [scsi_tmf_4]
+root       402     2  0  2020 ?        00:00:00 [xfsalloc]
+root       403     2  0  2020 ?        00:00:00 [xfs_mru_cache]
+root       404     2  0  2020 ?        00:00:00 [xfs-buf/sda2]
+root       405     2  0  2020 ?        00:00:00 [xfs-data/sda2]
+root       406     2  0  2020 ?        00:00:00 [xfs-conv/sda2]
+root       407     2  0  2020 ?        00:00:00 [xfs-cil/sda2]
+root       408     2  0  2020 ?        01:15:36 [xfsaild/sda2]
+root       519     2  0  2020 ?        00:00:00 [rpciod]
+root       528     1  0  2020 ?        00:00:00 /usr/sbin/lvmetad -f
+hspark     529 14043  0  2020 pts/143  00:00:00 -bash
+root       534     1  0  2020 ?        00:00:00 /usr/lib/systemd/systemd-udevd
+root       567     2  0  2020 ?        00:00:00 [edac-poller]
+root       582     2  0  2020 ?        00:00:00 [kipmi0]
+root       587     2  0  2020 ?        00:00:00 [xfs-buf/sdb1]
+root       588     2  0  2020 ?        00:00:00 [xfs-data/sdb1]
+root       589     2  0  2020 ?        00:00:00 [xfs-conv/sdb1]
+root       590     2  0  2020 ?        00:00:00 [xfs-cil/sdb1]
+root       591     2  0  2020 ?        00:00:00 [xfsaild/sdb1]
+cs20181+   609     1  0  2020 ?        00:20:04 /home1/cse20181106/.vscode-server/extensions/ms-vscode.cpptools-1.0.1/bin/cpptools
+root       629     2  0  2020 ?        00:00:00 [xfs-buf/sda3]
+root       630     2  0  2020 ?        00:00:00 [xfs-data/sda3]
+root       631     2  0  2020 ?        00:00:00 [xfs-conv/sda3]
+root       632     2  0  2020 ?        00:00:00 [xfs-cil/sda3]
+root       633     2  0  2020 ?        00:00:00 [xfsaild/sda3]
+root       656     1  0  2020 ?        00:05:24 /sbin/auditd -n
+root       672   656  0  2020 ?        00:06:35 /sbin/audispd
+root       673   672  0  2020 ?        00:02:41 /usr/sbin/sedispatch
+root       680     1  0  2020 ?        00:00:07 /usr/sbin/alsactl -s -n 19 -c -E ALSA_CONFIG_PATH=/etc/alsa/alsactl.conf --initfile=/lib/alsa/init/00main rdaemon
+root       681     1  0  2020 ?        00:00:04 /usr/sbin/smartd -n -q never
+root       683     1  0  2020 ?        00:04:42 /usr/sbin/rsyslogd -n
+dbus       684     1  0  2020 ?        00:21:17 /bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+rpc        692     1  0  2020 ?        00:00:34 /sbin/rpcbind -w
+libstor+   697     1  0  2020 ?        00:00:49 /usr/bin/lsmd -d
+cs20181+   700   609  0  2020 ?        00:04:17 /home1/cse20181106/.vscode-server/extensions/ms-vscode.cpptools-1.0.1/bin/cpptools-srv 609 0
+root       711     1  0  2020 ?        00:19:23 /usr/sbin/irqbalance --foreground
+root       714     1  0  2020 ?        00:00:32 /usr/sbin/gssproxy -D
+root       731     2  0  2020 ?        00:32:40 [kworker/2:1H]
+cs20171+   798 32757  0  2020 pts/181  00:00:00 vim Downloads/grade.sh
+root       806     2  0  2020 ?        00:00:13 [kworker/4:0H]
+root       815     1  0  2020 ?        00:00:10 /usr/sbin/cimserver
+root       822     2  0 00:06 ?        00:00:00 [kworker/4:1]
+root       989     1  0  2020 ?        00:27:50 /usr/bin/python -Es /usr/sbin/tuned -l -P
+root       991     1  0  2020 ?        00:01:12 /usr/sbin/sshd -D
+root       993     1  0  2020 ?        00:00:00 /usr/sbin/xinetd -stayalive -pidfile /var/run/xinetd.pid
+root       994     2  0  2020 ?        00:37:11 [kworker/0:1H]
+rpcuser   1026     1  0  2020 ?        00:00:00 /usr/sbin/rpc.statd --no-notify
+nobody    1029     1  0  2020 ?        00:17:42 /usr/sbin/gmond
+root      1050     2  0  2020 ?        00:00:00 [nfsiod]
+root      1057     2  0  2020 ?        00:28:37 [kworker/6:1H]
+root      1064     2  0  2020 ?        00:00:00 [lockd]
+root      1077     1  0  2020 ?        00:03:56 /usr/sbin/ypbind -n
+cs20171+  1095  1468  0  2020 pts/93   00:00:00 -bash
+cs20171+  1140  1468  0  2020 pts/95   00:00:00 -bash
+root      1238     2  0  2020 ?        00:24:16 [kworker/3:1H]
+root      1307     1  0  2020 ?        00:00:41 /usr/sbin/crond -n
+root      1368     1  0  2020 tty1     00:00:00 /sbin/agetty --noclear tty1 linux
+root      1433     1  0  2020 ?        00:58:00 /opt/sge/bin/lx-amd64/sge_execd
+cs20171+  1468     1  0  2020 ?        00:59:39 tmux
+cs20171+  1469  1468  0  2020 pts/89   00:00:00 -bash
+cs20171+  1512  1468  0  2020 pts/96   00:00:00 -bash
+cs20171+  1565  1469  0  2020 pts/89   00:00:00 vim main.cpp
+cs20171+  1598  1512  0  2020 pts/96   00:00:00 vim LinkedList.h
+cs20171+  1793  1468  0  2020 pts/57   00:00:00 -bash
+pl20141+  2067     1  0  2020 ?        00:08:22 tmux
+pl20141+  2068  2067  0  2020 pts/61   00:00:00 -bash
+pl20141+  2114  2067  0  2020 pts/62   00:00:00 -bash
+cs20161+  2118     1  0  2020 ?        00:00:00 vim sort.h
+pl20141+  2212  2114  0  2020 pts/62   00:00:00 vim flexk_check
+pl20141+  2226  2067  0  2020 pts/63   00:00:00 -bash
+cs20171+  2502     1  0  2020 ?        00:00:00 vim a.cpp
+cs20151+  2743 25048  0  2020 pts/1    00:00:00 -bash
+cs20171+  2830  1095  0  2020 pts/93   00:00:00 vim queue.h
+cs20151+  2864 25048  0  2020 pts/11   00:00:00 -bash
+root      2980     2  0  2020 ?        00:48:07 [kworker/7:1H]
+root      3129     1  0  2020 ?        00:06:59 /usr/libexec/packagekitd
+polkitd   3133     1  0  2020 ?        00:05:48 /usr/lib/polkit-1/polkitd --no-debug
+sp20191+  3448     1  0  2020 ?        00:14:27 /home1/sp20191339/.vscode-server/extensions/ms-vscode.cpptools-1.1.2/bin/cpptools
+sp20191+  3509  3448  0  2020 ?        00:03:11 /home1/sp20191339/.vscode-server/extensions/ms-vscode.cpptools-1.1.2/bin/cpptools-srv 3448 0
+cs20181+  3623     1  0 Jan19 ?        00:00:01 tmux
+cs20181+  3624  3623  0 Jan19 pts/25   00:00:00 -bash
+root      4070     2  0  2020 ?        00:34:54 [kworker/1:1H]
+cs20171+  4192  1468  0  2020 pts/76   00:00:00 -bash
+cs20171+  4232  1468  0  2020 pts/82   00:00:00 -bash
+cs20141+  4307 32390  0  2020 pts/17   00:00:00 -bash
+cs20141+  4320 32390  0  2020 pts/10   00:00:00 -bash
+pl20141+  4384  2067  0  2020 pts/64   00:00:00 -bash
+cs20171+  4390     1  0  2020 ?        00:00:00 vim MIPS_Simulator.c
+cs20141+  4618 32390  0  2020 pts/31   00:00:00 -bash
+cs20171+  4646  4192  0  2020 pts/76   00:00:00 vim to_postfix.h
+cs20141+  4791     1  0  2020 ?        04:24:52 /students_home/old_students/cs20141379/java/jdk1.8.0_201/bin/java -Dproc_namenode -Xmx1000m -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6/logs -Dhadoop.log.file=hadoop.log -Dhadoop.home.dir=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6 -Dhadoop.id.str=cs20141379 -Dhadoop.root.logger=INFO,console -Djava.library.path=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6/lib/native -Dhadoop.policy.file=hadoop-policy.xml -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6/logs -Dhadoop.log.file=hadoop-cs20141379-namenode-uni06.log -Dhadoop.home.dir=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6 -Dhadoop.id.str=cs20141379 -Dhadoop.root.logger=INFO,RFA -Djava.library.path=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6/lib/native -Dhadoop.policy.file=hadoop-policy.xml -Djava.net.preferIPv4Stack=true -Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS org.apache.hadoop.hdfs.server.namenode.NameNode
+cs20151+  4820 12778  0  2020 pts/38   00:00:03 vim README.md
+cs20171+  4847  4232  0  2020 pts/82   00:00:00 vim main.cpp
+cs20141+  4952 32390  0  2020 pts/13   00:00:00 -bash
+cs20141+  4958     1  0  2020 ?        05:28:41 /students_home/old_students/cs20141379/java/jdk1.8.0_201/bin/java -Dproc_datanode -Xmx1000m -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6/logs -Dhadoop.log.file=hadoop.log -Dhadoop.home.dir=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6 -Dhadoop.id.str=cs20141379 -Dhadoop.root.logger=INFO,console -Djava.library.path=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6/lib/native -Dhadoop.policy.file=hadoop-policy.xml -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6/logs -Dhadoop.log.file=hadoop-cs20141379-datanode-uni06.log -Dhadoop.home.dir=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6 -Dhadoop.id.str=cs20141379 -Dhadoop.root.logger=INFO,RFA -Djava.library.path=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6/lib/native -Dhadoop.policy.file=hadoop-policy.xml -Djava.net.preferIPv4Stack=true -server -Dhadoop.security.logger=ERROR,RFAS -Dhadoop.security.logger=ERROR,RFAS -Dhadoop.security.logger=ERROR,RFAS -Dhadoop.security.logger=INFO,RFAS org.apache.hadoop.hdfs.server.datanode.DataNode
+cs20141+  5044 32390  0  2020 pts/24   00:00:00 -bash
+cs20171+  5183  1468  0  2020 pts/99   00:00:00 -bash
+cs20141+  5188     1  0  2020 ?        02:58:39 /students_home/old_students/cs20141379/java/jdk1.8.0_201/bin/java -Dproc_secondarynamenode -Xmx1000m -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6/logs -Dhadoop.log.file=hadoop.log -Dhadoop.home.dir=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6 -Dhadoop.id.str=cs20141379 -Dhadoop.root.logger=INFO,console -Djava.library.path=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6/lib/native -Dhadoop.policy.file=hadoop-policy.xml -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Djava.net.preferIPv4Stack=true -Dhadoop.log.dir=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6/logs -Dhadoop.log.file=hadoop-cs20141379-secondarynamenode-uni06.log -Dhadoop.home.dir=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6 -Dhadoop.id.str=cs20141379 -Dhadoop.root.logger=INFO,RFA -Djava.library.path=/students_home/old_students/cs20141379/cloud-computing/hadoop-2.7.6/lib/native -Dhadoop.policy.file=hadoop-policy.xml -Djava.net.preferIPv4Stack=true -Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS -Dhdfs.audit.logger=INFO,NullAppender -Dhadoop.security.logger=INFO,RFAS org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode
+cs20171+  5443  1468  0  2020 pts/176  00:00:00 -bash
+cs20171+  5483  1468  0  2020 pts/177  00:00:00 -bash
+cs20171+  5831  1468  0  2020 pts/162  00:00:00 -bash
+root      5880     2  0 Jan08 ?        00:00:00 [kworker/2:0H]
+cs20161+  5881     1  0  2020 ?        00:02:47 tmux
+cs20161+  5882  5881  0  2020 pts/156  00:00:00 -bash
+cs20161+  5937  5881  0  2020 pts/157  00:00:00 -bash
+cs20121+  5940     1  0  2020 ?        00:41:58 tmux new -s ta
+cs20121+  5941  5940  0  2020 pts/41   00:00:01 -bash
+cs20121+  6312  5940  0  2020 pts/43   00:00:01 -bash
+cs20171+  6511  1468  0  2020 pts/103  00:00:00 -bash
+cs20171+  6558  1468  0  2020 pts/108  00:00:00 -bash
+cs20161+  6962  5881  0  2020 pts/158  00:00:00 -bash
+cs20151+  7041 25048  0  2020 pts/7    00:00:00 -bash
+root      7110     2  0 Jan19 ?        00:00:02 [kworker/1:2]
+cs20151+  7120     1  0  2020 ?        00:00:00 ssh-agent -s
+cs20151+  7147 25048  0  2020 pts/12   00:00:00 -bash
+cs20171+  7155     1  0  2020 ?        00:01:18 bochs -q
+pl20151+  7191  8690  0  2020 pts/18   00:00:00 -bash
+cs20161+  7210  6962  0  2020 pts/158  00:00:00 vim Make.tests
+root      7413     2  0 Jan12 ?        00:00:15 [kworker/3:0]
+cs20151+  7490  7041  0  2020 pts/7    00:00:00 vim thread.c
+cs20171+  7497  1468  0  2020 pts/120  00:00:00 -bash
+cs20171+  7551  1468  0  2020 pts/155  00:00:00 -bash
+pl20151+  7581  8690  0  2020 pts/49   00:00:00 -bash
+cs20181+  7932     1  0  2020 ?        00:00:00 ssh -N -f -L localhost:2222:localhost:1111 dong1@10.20.12.165
+cs20171+  8444  7551  0  2020 pts/155  00:00:00 vim score.py
+cs20121+  8553  5940  0  2020 pts/14   00:00:00 -bash
+cs20181+  8689     1  0  2020 ?        00:03:35 bochs -q
+pl20151+  8690     1  0  2020 ?        00:09:03 tmux new -s pl
+pl20151+  8691  8690  0  2020 pts/3    00:00:00 -bash
+cs20121+  8919  5940  0  2020 pts/141  00:00:01 -bash
+cs20171+  8930  1468  0  2020 pts/88   00:00:00 -bash
+cs20171+  8971  1468  0  2020 pts/100  00:00:00 -bash
+cse2014+  9233     1  0  2020 ?        00:31:33 /home1/cse20141430/.vscode-server/extensions/ms-vscode.cpptools-1.0.1-insiders/bin/cpptools
+cse2014+  9344  9233  0  2020 ?        00:06:34 /home1/cse20141430/.vscode-server/extensions/ms-vscode.cpptools-1.0.1-insiders/bin/cpptools-srv 9233 0
+root      9385     1  0  2020 ?        00:34:13 bomblab.pl
+root      9394     1  0  2020 ?        00:00:02 bomblab-requestd.pl
+root      9398     1  0  2020 ?        00:00:00 bomblab-resultd.pl
+root      9920     1  0  2020 ?        00:01:15 /usr/lib/systemd/systemd-logind
+cs20171+ 10021  1468  0  2020 pts/122  00:00:00 -bash
+cs20171+ 10365  6558  0  2020 pts/108  00:00:00 vim testlist.txt
+cs20181+ 10475     1  0  2020 ?        00:00:00 ssh -N -f -L localhost:2222:localhost:1111 dong1@10.20.12.165
+cs20181+ 10644     1  0  2020 ?        00:00:00 ssh -N -f -L localhost:3333:localhost:1111 dong1@10.20.12.165
+cs20162+ 10685     1  0  2020 ?        00:04:55 bochs -q
+cs20171+ 10771  1468  0  2020 pts/124  00:00:00 -bash
+cs20171+ 10814  1468  0  2020 pts/125  00:00:00 -bash
+cs20121+ 10848  5940  0  2020 pts/117  00:00:02 -bash
+root     11022     2  0 Jan08 ?        00:00:01 [kworker/u65:0]
+cs20151+ 11106 25048  0  2020 pts/33   00:00:00 -bash
+cs20171+ 11184  1468  0  2020 pts/167  00:00:00 -bash
+cs20151+ 11227 25048  0  2020 pts/34   00:00:00 -bash
+cs20151+ 11625 25048  0  2020 pts/36   00:00:00 -bash
+cs20171+ 11729  8930  0  2020 pts/88   00:00:00 vim to_postfix.h
+cs20151+ 11738 25048  0  2020 pts/66   00:00:00 -bash
+cs20171+ 11868  1468  0  2020 pts/132  00:00:00 -bash
+cs20171+ 11879  1468  0  2020 pts/55   00:00:00 -bash
+cs20171+ 11919  1468  0  2020 pts/75   00:00:00 -bash
+cs20171+ 11967 11879  0  2020 pts/55   00:00:05 vim to_postfix.h
+cs20141+ 12499     1  0  2020 ?        00:07:38 tmux
+cs20141+ 12500 12499  0  2020 pts/19   00:00:00 -bash
+cs20141+ 12545 12499  0  2020 pts/30   00:00:00 -bash
+cs20151+ 12673 25048  0  2020 pts/32   00:00:00 -bash
+cs20141+ 12697     1  0  2020 ?        00:01:27 bochs -q
+cs20151+ 12778 25048  0  2020 pts/38   00:00:00 -bash
+cs20181+ 13046     1  0  2020 ?        00:00:00 ssh -N -f -L localhost:8001:localhost:8000 dong1@10.20.12.165
+cs20151+ 13252 25048  0  2020 pts/21   00:00:00 -bash
+pl20181+ 13344     1  0  2020 ?        00:00:01 vim CBNinterpreter.py
+cs20151+ 13362 25048  0  2020 pts/67   00:00:00 -bash
+cs20141+ 13689     1  0  2020 ?        00:00:00 vim bits.c
+cs20171+ 13815  1468  0  2020 pts/78   00:00:00 -bash
+cs20171+ 13861  1468  0  2020 pts/133  00:00:00 -bash
+cs20171+ 13915 13861  0  2020 pts/133  00:00:00 vim score.py
+hspark   14043     1  0  2020 ?        00:31:55 tmux
+hspark   14044 14043  0  2020 pts/110  00:00:00 -bash
+root     14092     2  0 08:01 ?        00:00:00 [kworker/0:0]
+cse341   14156 21045  0  2020 pts/68   00:00:00 -bash
+cs20151+ 14581     1  0  2020 ?        00:00:02 vim
+cs20161+ 14588     1  0  2020 pts/116  00:00:00 /bin/bash
+hyoje420 14617     1  0  2020 ?        00:01:09 tmux
+hyoje420 14618 14617  0  2020 pts/59   00:00:00 -bash
+cs20171+ 14877  1468  0  2020 pts/173  00:00:00 -bash
+cs20171+ 14917  1468  0  2020 pts/174  00:00:01 -bash
+cs20171+ 15149  1468  0  2020 pts/178  00:00:00 -bash
+cs20171+ 15416  1468  0  2020 pts/149  00:00:00 -bash
+cs20171+ 15457  1468  0  2020 pts/150  00:00:00 -bash
+oop2019+ 15856     1  0  2020 pts/170  00:00:00 /bin/bash
+cs20181+ 15897     1  0  2020 ?        00:00:00 vim process.c
+oop2019+ 15922     1  0  2020 ?        00:15:29 /home1/oop20191253/.vscode-server/extensions/ms-vscode.cpptools-1.1.1/bin/cpptools
+root     15957     1  0  2020 ?        00:00:28 /usr/bin/perl ./bomblab-reportd.pl -q
+oop2019+ 15999 15922  0  2020 ?        00:03:28 /home1/oop20191253/.vscode-server/extensions/ms-vscode.cpptools-1.1.1/bin/cpptools-srv 15922 2
+cs20171+ 16048 15457  0  2020 pts/150  00:00:00 vim grade.sh
+cs20171+ 16516  1468  0  2020 pts/152  00:00:00 -bash
+root     16644     1  0  2020 ?        00:01:45 /usr/lib/systemd/systemd-journald
+root     17064     2  0 09:43 ?        00:00:00 [kworker/7:2]
+cs20171+ 17132 31612  0  2020 pts/139  00:00:00 vim to_postfix.h
+sieun908 17389     1  0  2020 ?        00:01:11 tmux
+sieun908 17435 17389  0  2020 pts/56   00:00:00 -bash
+sieun908 17479 17389  0  2020 pts/69   00:00:00 -bash
+sieun908 17519 17389  0  2020 pts/73   00:00:00 -bash
+sieun908 17562 17389  0  2020 pts/80   00:00:00 -bash
+sieun908 17610 17389  0  2020 pts/83   00:00:00 -bash
+sieun908 17653 17389  0  2020 pts/87   00:00:00 -bash
+sieun908 17701 17389  0  2020 pts/98   00:00:00 -bash
+cs20171+ 17744  1468  0  2020 pts/128  00:00:00 -bash
+root     17748     2  0 Jan11 ?        00:00:10 [kworker/6:1]
+sieun908 17764 17389  0  2020 pts/107  00:00:00 -bash
+cs20171+ 17799 17744  0  2020 pts/128  00:00:00 vim grade.sh
+sieun908 17810 17389  0  2020 pts/112  00:00:00 -bash
+cs20171+ 18022 15149  1  2020 pts/178  1-04:34:11 htop
+cs20141+ 18129     1  0  2020 ?        00:02:50 bochs -q
+root     18151     2  0 Jan11 ?        00:00:10 [kworker/4:2]
+pl20141+ 18178     1  0  2020 ?        00:04:38 ./a.out
+cs20131+ 18290     1  0  2020 ?        00:11:34 /students_home/old_students/cs20131657/.vscode-server/extensions/ms-vscode.cpptools-0.28.2/bin/cpptools-srv 20836 53
+cs20131+ 18291     1  0  2020 ?        00:11:30 /students_home/old_students/cs20131657/.vscode-server/extensions/ms-vscode.cpptools-0.28.2/bin/cpptools-srv 20836 51
+cs20161+ 18314     1  0  2020 ?        00:19:09 /students_home/old_students/cs20161312/.vscode-server/extensions/ms-vscode.cpptools-1.0.1/bin/cpptools
+cs20161+ 18391 18314  0  2020 ?        00:04:02 /students_home/old_students/cs20161312/.vscode-server/extensions/ms-vscode.cpptools-1.0.1/bin/cpptools-srv 18314 0
+cs20181+ 18452     1  0  2020 ?        00:02:40 bochs -q
+sp20191+ 18833     1  0  2020 ?        00:01:13 myint 100000000000000
+root     19337   991  0 11:04 ?        00:00:00 sshd: cs20171121 [priv]
+cs20171+ 19342 19337  0 11:04 ?        00:00:00 sshd: cs20171121@pts/0
+cs20171+ 19343 19342  0 11:04 pts/0    00:00:00 -bash
+cs20171+ 19365 11868  0  2020 pts/132  00:00:00 vim result.txt
+cs20171+ 19418  1468  0  2020 pts/130  00:00:00 -bash
+cs20161+ 19419     1  0  2020 ?        00:00:00 emacs --daemon
+cs20171+ 19467  1468  0  2020 pts/131  00:00:00 -bash
+cs20171+ 19542  1468  0  2020 pts/134  00:00:00 -bash
+cs20171+ 19569     1  0 11:08 ?        00:00:00 sh /students_home/cs20171121/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/server.sh --start-server --host=127.0.0.1 --enable-remote-auto-shutdown --port=0
+cs20171+ 19577 19569  0 11:08 ?        00:00:02 /students_home/cs20171121/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/node /students_home/cs20171121/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/out/vs/server/main.js --start-server --host=127.0.0.1 --enable-remote-auto-shutdown --port=0
+cs20171+ 19650 19577  2 11:08 ?        00:01:39 /students_home/cs20171121/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/node /students_home/cs20171121/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/out/bootstrap-fork --type=extensionHost --uriTransformerPath=/students_home/cs20171121/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/out/vs/server/uriTransformer.js
+cs20171+ 19664 19577  0 11:08 ?        00:00:04 /students_home/cs20171121/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/node /students_home/cs20171121/.vscode-server/bin/ea3859d4ba2f3e577a159bc91e3074c5d85c0523/out/bootstrap-fork --type=watcherService
+cs20171+ 19893  1468  0  2020 pts/151  00:00:00 -bash
+root     19949     2  0 Jan02 ?        00:00:00 [kworker/5:2H]
+root     20374     2  0 Jan17 ?        00:00:00 [kworker/1:1]
+cs20181+ 20465     1  0  2020 ?        00:02:43 bochs -q
+cs20131+ 20703     1  0  2020 pts/45   00:00:00 /bin/bash
+cs20161+ 20718 18314  0  2020 ?        00:04:03 /students_home/old_students/cs20161312/.vscode-server/extensions/ms-vscode.cpptools-1.0.1/bin/cpptools-srv 18314 1
+cs20171+ 20772  1468  0  2020 pts/145  00:00:00 -bash
+cse341   21045     1  0  2020 ?        00:11:51 tmux
+cse341   21046 21045  0  2020 pts/29   00:00:00 -bash
+root     21112     2  0 Jan19 ?        00:00:00 [kworker/0:1]
+cse341   21287 21045  0  2020 pts/35   00:00:00 -bash
+cs20151+ 21413     1  0  2020 ?        00:00:01 vim process.c
+cse341   21867 21046  0  2020 pts/29   00:00:00 vim interpreter_test.py
+cs20171+ 22047  1468  0  2020 pts/90   00:00:00 -bash
+cs20171+ 22088  1468  0  2020 pts/92   00:00:00 -bash
+oop2016+ 22094     1  0  2020 ?        00:00:01 /home1/oop20161333/.vscode-server/extensions/ms-vscode.cpptools-1.1.0-insiders3/debugAdapters/mono.linux-x86_64 --config /home1/oop20161333/.vscode-server/extensions/ms-vscode.cpptools-1.1.0-insiders3/debugAdapters/framework/config.linux /home1/oop20161333/.vscode-server/extensions/ms-vscode.cpptools-1.1.0-insiders3/debugAdapters/bin/OpenDebugAD7.exe
+cse341   22147 21045  0  2020 pts/40   00:00:00 -bash
+cs20171+ 22254  1468  0  2020 pts/163  00:00:00 -bash
+cse341   22257 21045  0  2020 pts/44   00:00:00 -bash
+cs20171+ 22355  1468  0  2020 pts/172  00:00:00 -bash
+root     22417     2  0 Jan17 ?        00:00:02 [kworker/u65:2]
+cse341   22496 21045  0  2020 pts/47   00:00:00 -bash
+cs20171+ 22761  1468  0  2020 pts/135  00:00:00 -bash
+cs20171+ 22805  1468  0  2020 pts/136  00:00:00 -bash
+cs20171+ 22922 22047  0  2020 pts/90   00:00:00 vim to_postfix_sol.h
+cse341   23200 22257  0  2020 pts/44   00:00:00 vim score_FLEXK.txt
+cs20171+ 23213  1468  0 Jan13 pts/74   00:00:00 -bash
+cse341   23234 22147  0  2020 pts/40   00:00:00 vim test.py
+cs20171+ 23259  1468  0 Jan13 pts/81   00:00:00 -bash
+cs20171+ 23300 23213  0 Jan13 pts/74   00:00:00 vim auto.sh
+cs20141+ 23547 32390  0  2020 pts/60   00:00:00 -bash
+cs20171+ 23576  1468  0  2020 pts/106  00:00:00 -bash
+cs20171+ 23636  1468  0  2020 pts/109  00:00:00 -bash
+cs20151+ 23727     1  0  2020 ?        01:12:43 tmux
+cs20151+ 23728 23727  0  2020 pts/2    00:00:00 -bash
+cs20151+ 23957 25048  0  2020 pts/70   00:00:00 -bash
+root     23965     2  0 Jan19 ?        00:00:04 [kworker/2:0]
+cs20171+ 23973 19418  0  2020 pts/130  00:00:00 vim grade.sh
+cs20151+ 24068 25048  0  2020 pts/72   00:00:00 -bash
+cs20152+ 24122     1  0  2020 ?        00:03:11 bochs -q
+cs20151+ 24200 23957  0  2020 pts/70   00:00:00 vim config.conf
+cs20151+ 24473     1  0  2020 ?        00:07:29 /home/cs20151146/.vscode-server/extensions/ms-vsliveshare.vsliveshare-1.0.2740/dotnet_modules/vsls-agent --autoexit --enableRpcInitialize --pipe vscode.3422a59fbccb09ce855bfa9d3df501cb --service https://prod.liveshare.vsengsaas.visualstudio.com/ --signalRServiceUri https://signlr-prod.core.vsengsaas.visualstudio.com/api/signalr/signalrhub --agentExtensionPath /home/cs20151146/.vscode-server/extensions/ms-vsliveshare.vsliveshare-1.0.2740/dotnet_modules/Microsoft.VisualStudio.LiveShare.Agent.PresenceService.dll
+cs20171+ 24540  1468  0  2020 pts/153  00:00:00 -bash
+cs20121+ 24588  5940  0  2020 pts/46   00:00:00 -bash
+cs20141+ 24656 32390  0  2020 pts/54   00:00:00 -bash
+cs20171+ 24724 23576  0  2020 pts/106  00:00:02 vim calculator.h
+cs20141+ 24826 32390  0  2020 pts/58   00:00:00 -bash
+cs20151+ 25048     1  0  2020 ?        03:12:01 tmux -2u
+cs20151+ 25049 25048  0  2020 pts/27   00:00:00 -bash
+hyoje420 25055 14617  0  2020 pts/65   00:00:00 -bash
+root     25147     2  0 11:53 ?        00:00:00 [kworker/u64:1]
+cs20151+ 25159 25048  0  2020 pts/28   00:00:00 -bash
+cs20141+ 25298     1  0  2020 ?        00:07:27 bochs -q
+cs20171+ 25317  1468  0  2020 pts/137  00:00:00 -bash
+root     25324     1  0  2020 ?        00:08:09 tmux new -s oop
+root     25325 25324  0  2020 pts/48   00:00:00 -bash
+cs20171+ 25361  1468  0  2020 pts/138  00:00:00 -bash
+cs20141+ 25364     1  0  2020 ?        00:00:00 vim driver1.cpp
+root     25386 25324  0  2020 pts/50   00:00:00 -bash
+cs20171+ 25397  1468  0  2020 pts/86   00:00:00 -bash
+cs20171+ 25880 22254  1  2020 pts/163  1-04:46:32 htop
+cs20121+ 26061  5940  0  2020 pts/171  00:00:01 -bash
+root     26143     2  0 Jan17 ?        00:00:04 [kworker/7:0]
+root     26161     2  0 Jan19 ?        00:00:01 [kworker/3:1]
+cs20171+ 26236     1  0  2020 ?        00:00:00 gdb bomb
+cs20121+ 26285  5940  0  2020 pts/160  00:00:02 -bash
+root     26470  1307  0  2020 ?        00:00:02 /usr/sbin/crond -n
+cs20171+ 26511  1468  0  2020 pts/51   00:00:00 -bash
+cs20171+ 26556  1468  0  2020 pts/123  00:00:00 -bash
+cs20141+ 26686     1  0  2020 ?        00:01:27 bochs -q
+cse341   26842 21287  0  2020 pts/35   00:00:00 vim score.txt
+cs20171+ 26861 19893  0  2020 pts/151  00:00:00 vim student_list.csv
+root     27207     1  0  2020 ?        00:00:00 /usr/sbin/atd -f
+cs20171+ 27274  1468  0  2020 pts/126  00:00:00 -bash
+root     27281     2  0 12:05 ?        00:00:00 [kworker/u64:2]
+root     27496     2  0 Jan03 ?        00:00:29 [kworker/5:0H]
+cs20181+ 27876     1  0  2020 ?        00:00:00 sh /home/cs20181281/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/server.sh --host=127.0.0.1 --enable-remote-auto-shutdown --port=0
+cs20181+ 27885 27876  0  2020 ?        00:01:10 /home/cs20181281/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/node /home/cs20181281/.vscode-server/bin/fcac248b077b55bae4ba5bab613fd6e9156c2f0c/out/vs/server/main.js --host=127.0.0.1 --enable-remote-auto-shutdown --port=0
+sp20161+ 28049     1  0  2020 ?        00:00:35 /home1/sp20161049/.vscode-server/extensions/ms-vsliveshare.vsliveshare-1.0.3014/dotnet_modules/vsls-agent --autoexit --enableRpcInitialize --pipe vscode.98d8cbf7eeed9e11d4018a8117d58e18 --service https://prod.liveshare.vsengsaas.visualstudio.com/ --signalRServiceUri https://signlr-prod.core.vsengsaas.visualstudio.com/api/signalr/signalrhub --agentExtensionPath /home1/sp20161049/.vscode-server/extensions/ms-vsliveshare.vsliveshare-1.0.3014/dotnet_modules/Microsoft.VisualStudio.LiveShare.Agent.PresenceService.dll
+cs20161+ 28259     1  0  2020 ?        00:07:33 bochs -q
+root     28631   991  0 12:15 ?        00:00:00 sshd: cs20151509 [priv]
+cs20151+ 28642 28631  0 12:15 ?        00:00:00 sshd: cs20151509@pts/16
+cs20151+ 28643 28642  0 12:15 pts/16   00:00:00 -bash
+cs20161+ 28807     1  0  2020 ?        00:19:09 /students_home/old_students/cs20161312/.vscode-server/extensions/ms-vscode.cpptools-1.0.1/bin/cpptools
+root     28866     2  0 Jan13 ?        00:00:00 [kworker/u66:1]
+cs20161+ 28882 28807  0  2020 ?        00:04:01 /students_home/old_students/cs20161312/.vscode-server/extensions/ms-vscode.cpptools-1.0.1/bin/cpptools-srv 28807 0
+root     28961     2  0 12:17 ?        00:00:00 [kworker/2:1]
+cs20162+ 29317     1  0  2020 ?        00:03:12 bochs -q
+cs20161+ 29381 28807  0  2020 ?        00:04:01 /students_home/old_students/cs20161312/.vscode-server/extensions/ms-vscode.cpptools-1.0.1/bin/cpptools-srv 28807 1
+cs20161+ 29412 28807  0  2020 ?        00:03:59 /students_home/old_students/cs20161312/.vscode-server/extensions/ms-vscode.cpptools-1.0.1/bin/cpptools-srv 28807 2
+cs20151+ 29509 11738  0  2020 pts/66   00:00:02 vim output.txt
+root     29578     2  0 12:22 ?        00:00:00 [kworker/2:2]
+cs20151+ 29882     1  0  2020 ?        00:07:57 tmux
+cs20151+ 29883 29882  0  2020 pts/84   00:00:00 -bash
+root     29929     2  0 Jan19 ?        00:00:00 [kworker/4:2H]
+cs20151+ 29994 29882  0  2020 pts/91   00:00:00 -bash
+cs20151+ 30056 28643  0 12:26 pts/16   00:00:00 ps -ef
+cs20151+ 30106 29883  0  2020 pts/84   00:00:01 gdb kernel.o
+root     30616     2  0 Jan13 ?        00:00:01 [kworker/u66:0]
+cs20181+ 31011     1  0  2020 ?        00:00:00 vim strassen.cpp
+root     31117     2  0 Jan18 ?        00:00:00 [kworker/6:2]
+colord   31220     1  0  2020 ?        00:00:00 /usr/libexec/colord
+root     31376     2  0 Jan08 ?        00:00:20 [kworker/5:2]
+cs20151+ 31389 25048  0  2020 pts/20   00:00:00 -bash
+cs20151+ 31494 25048  0  2020 pts/26   00:00:00 -bash
+cs20171+ 31612  1468  0  2020 pts/139  00:00:00 -bash
+cs20171+ 31658  1468  0  2020 pts/140  00:00:00 -bash
+cs20141+ 32028  5044  0  2020 pts/24   00:00:00 cscope -R
+cs20161+ 32089     1  0  2020 ?        00:02:29 bochs -q
+cs20141+ 32390     1  0  2020 ?        00:13:01 tmux
+cs20141+ 32391 32390  0  2020 pts/37   00:00:00 -bash
+root     32670     2  0 Jan19 ?        00:00:00 [kworker/5:0]
+cs20172+ 32714     1  0  2020 ?        00:00:00 ssh-agent -s
+cs20171+ 32757  1468  0  2020 pts/181  00:00:00 -bash
