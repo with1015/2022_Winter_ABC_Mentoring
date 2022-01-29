@@ -10,7 +10,7 @@ def get_contents(file_list):
     x_text = []
     # 0-> baseball news
     # 1-> soccer news
-    # 2-> Unknown
+    # 2-> Unknown (e.g., crawling file)
     category = {0: "2", 1: "0", 2: "0", 3: "0", 4: "0", 5: "1", 6: "1", 7: "1", 8: "1"}
 
     for file_name in file_list:

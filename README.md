@@ -10,9 +10,12 @@ In this activity, students will do three tasks
 
 ### How to run?
 ~~~
+# Single run
 python3 crawling.py
-source parser.sh [crwaling result file]
 python3 news_classification.py
+
+# Crawling + Parsing + Classification
+source run.sh [crwaling result file]
 ~~~
 
 ### Requirements
