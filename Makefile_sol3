@@ -1,0 +1,12 @@
+CC = gcc
+CFLAGS = -W -Wall
+TARGET = diary
+OBJS = memo.o main.o calendar.o
+
+all : $(TARGET)
+
+$(TARGET) : $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+clean :
+	rm *.o $(TARGET)
