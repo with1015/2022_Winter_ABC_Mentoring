@@ -2,14 +2,14 @@
 
 Team 8 Mentor Hyunjoon Jeong
 
-## Course Plan (Can be changed)  
+## Course Plan (Fixed)  
 
-course 1 | Orientation       | course 7  | Command-line Environment
+course 1 | Orientation       | course 7  | Metaprogramming
 :---|:---|:---|:---
 course 2 | Git & VCS         | course 8  | Debugging and Profiling
-course 3 | Shell script 1    | course 9  | Metaprogramming
-course 4 | Shell script 2    | course 10 | Security and Cryptography
-course 5 | Text Editor (Vim) | course 11 | Potpourri
-course 6 | Data Wrangling    | course 12 | Special Topic and Q&A 
+course 3 | Shell script 1    | course 9  | Security and Cryptography
+course 4 | Shell script 2    | course 10 | Potpourri
+course 5 | Text Editor (Vim) | course 11 | Special Topic 1
+course 6 | Data Wrangling    | course 12 | Special Topic 2 and Q&A 
 
 All contents is based on <a href="https://missing.csail.mit.edu/2020/">MIT missing course</a>
