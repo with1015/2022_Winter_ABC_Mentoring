@@ -6,8 +6,8 @@ Team 8 Mentor Hyunjoon Jeong
 
 course 1 | Orientation       | course 7  | Metaprogramming
 :---|:---|:---|:---
-course 2 | Git & VCS         | course 8  | Debugging and Profiling
-course 3 | Shell script 1    | course 9  | Security and Cryptography
+course 2 | Git & VCS         | course 8  | Security and Cryptography
+course 3 | Shell script 1    | course 9  | Debugging and Profiling
 course 4 | Shell script 2    | course 10 | Potpourri
 course 5 | Text Editor (Vim) | course 11 | Special Topic 1
 course 6 | Data Wrangling    | course 12 | Special Topic 2 and Q&A 
