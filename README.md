@@ -2,7 +2,7 @@
 
 Team 8 Mentor Hyunjoon Jeong
 
-## Class 11 Special Topic (AWS) - Activity
+## Class 12 Special Topic (AWS) - Activity
 
 ### How to run?
 ~~~
